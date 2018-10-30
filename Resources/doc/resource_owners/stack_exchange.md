@@ -10,7 +10,7 @@ for the [available scopes](https://api.stackexchange.com/docs/authentication#sco
 ```yaml
 # app/config/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     resource_owners:
         any_name:
             type:                stack_exchange

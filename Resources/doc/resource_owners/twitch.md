@@ -8,7 +8,7 @@ Next configure a resource owner of type `twitch` with appropriate `client_id` an
 ```yaml
 # app/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     resource_owners:
         any_name:
             type:          twitch

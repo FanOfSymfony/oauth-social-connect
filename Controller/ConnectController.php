@@ -1,15 +1,15 @@
 <?php
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Controller;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Controller;
 
-use FOS\Bundle\OAuthBSocialConnectBundle\Event\FilterUserResponseEvent;
-use FOS\Bundle\OAuthBSocialConnectBundle\Event\FormEvent;
-use FOS\Bundle\OAuthBSocialConnectBundle\Event\GetResponseUserEvent;
-use FOS\Bundle\OAuthBSocialConnectBundle\FOSOAuthSocialConnectorEvents;
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface;
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\UserResponseInterface;
-use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\Authentication\Token\OAuthToken;
-use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\Exception\AccountNotLinkedException;
+use FOS\Bundle\OAuthSocialConnectBundle\Event\FilterUserResponseEvent;
+use FOS\Bundle\OAuthSocialConnectBundle\Event\FormEvent;
+use FOS\Bundle\OAuthSocialConnectBundle\Event\GetResponseUserEvent;
+use FOS\Bundle\OAuthSocialConnectBundle\FOSOAuthSocialConnectEvents;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwnerInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\Response\UserResponseInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\Security\Core\Authentication\Token\OAuthToken;
+use FOS\Bundle\OAuthSocialConnectBundle\Security\Core\Exception\AccountNotLinkedException;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\FormInterface;
@@ -43,8 +43,8 @@ class ConnectController extends Controller
      */
     public function connectAction(Request $request)
     {
-        $connect = $this->container->getParameter('hwi_oauth.connect');
-        $hasUser = $this->getUser() ? $this->isGranted($this->container->getParameter('hwi_oauth.grant_rule')) : false;
+        $connect = $this->container->getParameter('fos_oauth_social_connect.connect');
+        $hasUser = $this->getUser() ? $this->isGranted($this->container->getParameter('fos_oauth_social_connect.grant_rule')) : false;
 
         $error = $this->getErrorForRequest($request);
 
@@ -56,9 +56,9 @@ class ConnectController extends Controller
                 $session->start();
             }
 
-            $session->set('_hwi_oauth.registration_error.'.$key, $error);
+            $session->set('_fos_oauth_social_connect.registration_error.'.$key, $error);
 
-            return $this->redirectToRoute('hwi_oauth_connect_registration', array('key' => $key));
+            return $this->redirectToRoute('fos_oauth_social_connect_connect_registration', array('key' => $key));
         }
 
         if ($error) {
@@ -89,12 +89,12 @@ class ConnectController extends Controller
      */
     public function registrationAction(Request $request, $key)
     {
-        $connect = $this->container->getParameter('hwi_oauth.connect');
+        $connect = $this->container->getParameter('fos_oauth_social_connect.connect');
         if (!$connect) {
             throw new NotFoundHttpException();
         }
 
-        $hasUser = $this->isGranted($this->container->getParameter('hwi_oauth.grant_rule'));
+        $hasUser = $this->isGranted($this->container->getParameter('fos_oauth_social_connect.grant_rule'));
         if ($hasUser) {
             throw new AccessDeniedException('Cannot connect already registered account.');
         }
@@ -104,8 +104,8 @@ class ConnectController extends Controller
             $session->start();
         }
 
-        $error = $session->get('_hwi_oauth.registration_error.'.$key);
-        $session->remove('_hwi_oauth.registration_error.'.$key);
+        $error = $session->get('_fos_oauth_social_connect.registration_error.'.$key);
+        $session->remove('_fos_oauth_social_connect.registration_error.'.$key);
 
         if (!$error instanceof AccountNotLinkedException) {
             throw new \RuntimeException('Cannot register an account.', 0, $error instanceof \Exception ? $error : null);
@@ -117,23 +117,23 @@ class ConnectController extends Controller
         ;
 
         /* @var $form FormInterface */
-        if ($this->container->getParameter('hwi_oauth.fosub_enabled')) {
+        if ($this->container->getParameter('fos_oauth_social_connect.fosub_enabled')) {
             // enable compatibility with FOSUserBundle 1.3.x and 2.x
             if (interface_exists('FOS\UserBundle\Form\Factory\FactoryInterface')) {
-                $form = $this->container->get('hwi_oauth.registration.form.factory')->createForm();
+                $form = $this->container->get('fos_oauth_social_connect.registration.form.factory')->createForm();
             } else {
-                $form = $this->container->get('hwi_oauth.registration.form');
+                $form = $this->container->get('fos_oauth_social_connect.registration.form');
             }
         } else {
-            $form = $this->container->get('hwi_oauth.registration.form');
+            $form = $this->container->get('fos_oauth_social_connect.registration.form');
         }
 
-        $formHandler = $this->container->get('hwi_oauth.registration.form.handler');
+        $formHandler = $this->container->get('fos_oauth_social_connect.registration.form.handler');
         if ($formHandler->process($request, $form, $userInformation)) {
             $event = new FormEvent($form, $request);
-            $this->get('event_dispatcher')->dispatch(FOSOAuthSocialConnectorEvents::REGISTRATION_SUCCESS, $event);
+            $this->get('event_dispatcher')->dispatch(FOSOAuthSocialConnectEvents::REGISTRATION_SUCCESS, $event);
 
-            $this->container->get('hwi_oauth.account.connector')->connect($form->getData(), $userInformation);
+            $this->container->get('fos_oauth_social_connect.account.connector')->connect($form->getData(), $userInformation);
 
             // Authenticate the user
             $this->authenticateUser($request, $form->getData(), $error->getResourceOwnerName(), $error->getAccessToken());
@@ -149,16 +149,16 @@ class ConnectController extends Controller
             }
 
             $event = new FilterUserResponseEvent($form->getData(), $request, $response);
-            $this->get('event_dispatcher')->dispatch(FOSOAuthSocialConnectorEvents::REGISTRATION_COMPLETED, $event);
+            $this->get('event_dispatcher')->dispatch(FOSOAuthSocialConnectEvents::REGISTRATION_COMPLETED, $event);
 
             return $response;
         }
 
         // reset the error in the session
-        $session->set('_hwi_oauth.registration_error.'.$key, $error);
+        $session->set('_fos_oauth_social_connect.registration_error.'.$key, $error);
 
         $event = new GetResponseUserEvent($form->getData(), $request);
-        $this->get('event_dispatcher')->dispatch(FOSOAuthSocialConnectorEvents::REGISTRATION_INITIALIZE, $event);
+        $this->get('event_dispatcher')->dispatch(FOSOAuthSocialConnectEvents::REGISTRATION_INITIALIZE, $event);
 
         if ($response = $event->getResponse()) {
             return $response;
@@ -186,12 +186,12 @@ class ConnectController extends Controller
      */
     public function connectServiceAction(Request $request, $service)
     {
-        $connect = $this->container->getParameter('hwi_oauth.connect');
+        $connect = $this->container->getParameter('fos_oauth_social_connect.connect');
         if (!$connect) {
             throw new NotFoundHttpException();
         }
 
-        $hasUser = $this->isGranted($this->container->getParameter('hwi_oauth.grant_rule'));
+        $hasUser = $this->isGranted($this->container->getParameter('fos_oauth_social_connect.grant_rule'));
         if (!$hasUser) {
             throw new AccessDeniedException('Cannot connect an account.');
         }
@@ -209,26 +209,26 @@ class ConnectController extends Controller
         if ($resourceOwner->handles($request)) {
             $accessToken = $resourceOwner->getAccessToken(
                 $request,
-                $this->container->get('hwi_oauth.security.oauth_utils')->getServiceAuthUrl($request, $resourceOwner)
+                $this->container->get('fos_oauth_social_connect.security.oauth_utils')->getServiceAuthUrl($request, $resourceOwner)
             );
 
             // save in session
-            $session->set('_hwi_oauth.connect_confirmation.'.$key, $accessToken);
+            $session->set('_fos_oauth_social_connect.connect_confirmation.'.$key, $accessToken);
         } else {
-            $accessToken = $session->get('_hwi_oauth.connect_confirmation.'.$key);
+            $accessToken = $session->get('_fos_oauth_social_connect.connect_confirmation.'.$key);
         }
 
         // Redirect to the login path if the token is empty (Eg. User cancelled auth)
         if (null === $accessToken) {
-            if ($this->container->getParameter('hwi_oauth.failed_use_referer') && $targetPath = $this->getTargetPath($session, 'failed_target_path')) {
+            if ($this->container->getParameter('fos_oauth_social_connect.failed_use_referer') && $targetPath = $this->getTargetPath($session, 'failed_target_path')) {
                 return $this->redirect($targetPath);
             }
 
-            return $this->redirectToRoute($this->container->getParameter('hwi_oauth.failed_auth_path'));
+            return $this->redirectToRoute($this->container->getParameter('fos_oauth_social_connect.failed_auth_path'));
         }
 
         // Show confirmation page?
-        if (!$this->container->getParameter('hwi_oauth.connect.confirmation')) {
+        if (!$this->container->getParameter('fos_oauth_social_connect.connect.confirmation')) {
             return $this->getConfirmationResponse($request, $accessToken, $service);
         }
 
@@ -245,7 +245,7 @@ class ConnectController extends Controller
         }
 
         $event = new GetResponseUserEvent($this->getUser(), $request);
-        $this->get('event_dispatcher')->dispatch(FOSOAuthSocialConnectorEvents::CONNECT_INITIALIZE, $event);
+        $this->get('event_dispatcher')->dispatch(FOSOAuthSocialConnectEvents::CONNECT_INITIALIZE, $event);
 
         if ($response = $event->getResponse()) {
             return $response;
@@ -270,7 +270,7 @@ class ConnectController extends Controller
     public function redirectToServiceAction(Request $request, $service)
     {
         try {
-            $authorizationUrl = $this->container->get('hwi_oauth.security.oauth_utils')->getAuthorizationUrl($request, $service);
+            $authorizationUrl = $this->container->get('fos_oauth_social_connect.security.oauth_utils')->getAuthorizationUrl($request, $service);
         } catch (\RuntimeException $e) {
             throw new NotFoundHttpException($e->getMessage(), $e);
         }
@@ -284,20 +284,20 @@ class ConnectController extends Controller
                 $session->start();
             }
 
-            foreach ($this->container->getParameter('hwi_oauth.firewall_names') as $providerKey) {
+            foreach ($this->container->getParameter('fos_oauth_social_connect.firewall_names') as $providerKey) {
                 $sessionKey = '_security.'.$providerKey.'.target_path';
                 $sessionKeyFailure = '_security.'.$providerKey.'.failed_target_path';
 
-                $param = $this->container->getParameter('hwi_oauth.target_path_parameter');
+                $param = $this->container->getParameter('fos_oauth_social_connect.target_path_parameter');
                 if (!empty($param) && $targetUrl = $request->get($param)) {
                     $session->set($sessionKey, $targetUrl);
                 }
 
-                if ($this->container->getParameter('hwi_oauth.failed_use_referer') && !$session->has($sessionKeyFailure) && ($targetUrl = $request->headers->get('Referer')) && $targetUrl !== $authorizationUrl) {
+                if ($this->container->getParameter('fos_oauth_social_connect.failed_use_referer') && !$session->has($sessionKeyFailure) && ($targetUrl = $request->headers->get('Referer')) && $targetUrl !== $authorizationUrl) {
                     $session->set($sessionKeyFailure, $targetUrl);
                 }
 
-                if ($this->container->getParameter('hwi_oauth.use_referer') && !$session->has($sessionKey) && ($targetUrl = $request->headers->get('Referer')) && $targetUrl !== $authorizationUrl) {
+                if ($this->container->getParameter('fos_oauth_social_connect.use_referer') && !$session->has($sessionKey) && ($targetUrl = $request->headers->get('Referer')) && $targetUrl !== $authorizationUrl) {
                     $session->set($sessionKey, $targetUrl);
                 }
             }
@@ -343,8 +343,8 @@ class ConnectController extends Controller
      */
     protected function getResourceOwnerByName($name)
     {
-        foreach ($this->container->getParameter('hwi_oauth.firewall_names') as $firewall) {
-            $id = 'hwi_oauth.resource_ownermap.'.$firewall;
+        foreach ($this->container->getParameter('fos_oauth_social_connect.firewall_names') as $firewall) {
+            $id = 'fos_oauth_social_connect.resource_ownermap.'.$firewall;
             if (!$this->container->has($id)) {
                 continue;
             }
@@ -388,8 +388,8 @@ class ConnectController extends Controller
     protected function authenticateUser(Request $request, UserInterface $user, $resourceOwnerName, $accessToken, $fakeLogin = true)
     {
         try {
-            $this->container->get('hwi_oauth.user_checker')->checkPreAuth($user);
-            $this->container->get('hwi_oauth.user_checker')->checkPostAuth($user);
+            $this->container->get('fos_oauth_social_connect.user_checker')->checkPreAuth($user);
+            $this->container->get('fos_oauth_social_connect.user_checker')->checkPostAuth($user);
         } catch (AccountStatusException $e) {
             // Don't authenticate locked, disabled or expired users
             return;
@@ -418,7 +418,7 @@ class ConnectController extends Controller
      */
     private function getTargetPath(SessionInterface $session)
     {
-        foreach ($this->container->getParameter('hwi_oauth.firewall_names') as $providerKey) {
+        foreach ($this->container->getParameter('fos_oauth_social_connect.firewall_names') as $providerKey) {
             $sessionKey = '_security.'.$providerKey.'.target_path';
             if ($session->has($sessionKey)) {
                 return $session->get($sessionKey);
@@ -450,9 +450,9 @@ class ConnectController extends Controller
         $userInformation = $resourceOwner->getUserInformation($accessToken);
 
         $event = new GetResponseUserEvent($currentUser, $request);
-        $this->get('event_dispatcher')->dispatch(FOSOAuthSocialConnectorEvents::CONNECT_CONFIRMED, $event);
+        $this->get('event_dispatcher')->dispatch(FOSOAuthSocialConnectEvents::CONNECT_CONFIRMED, $event);
 
-        $this->container->get('hwi_oauth.account.connector')->connect($currentUser, $userInformation);
+        $this->container->get('fos_oauth_social_connect.account.connector')->connect($currentUser, $userInformation);
 
         if ($currentToken instanceof OAuthToken) {
             // Update user token with new details
@@ -476,7 +476,7 @@ class ConnectController extends Controller
         }
 
         $event = new FilterUserResponseEvent($currentUser, $request, $response);
-        $this->get('event_dispatcher')->dispatch(FOSOAuthSocialConnectorEvents::CONNECT_COMPLETED, $event);
+        $this->get('event_dispatcher')->dispatch(FOSOAuthSocialConnectEvents::CONNECT_COMPLETED, $event);
 
         return $response;
     }

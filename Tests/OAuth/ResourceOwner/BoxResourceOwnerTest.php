@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Tests\OAuth\ResourceOwner;
 
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner\BoxResourceOwner;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwner\BoxResourceOwner;
 
 class BoxResourceOwnerTest extends GenericOAuth2ResourceOwnerTest
 {

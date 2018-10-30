@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\Controller;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Tests\Controller;
 
 use FOS\UserBundle\Form\Factory\FactoryInterface;
-use FOS\Bundle\OAuthBSocialConnectBundle\Form\RegistrationFormHandlerInterface;
-use FOS\Bundle\OAuthBSocialConnectBundle\FOSOAuthSocialConnectorEvents;
-use FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures\User;
+use FOS\Bundle\OAuthSocialConnectBundle\Form\RegistrationFormHandlerInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\FOSOAuthSocialConnectEvents;
+use FOS\Bundle\OAuthSocialConnectBundle\Tests\Fixtures\User;
 use Symfony\Component\Form\Form;
 use Symfony\Component\Security\Http\SecurityEvents;
 
@@ -25,7 +25,7 @@ class ConnectControllerRegistrationActionTest extends AbstractConnectControllerT
      */
     public function testNotEnabled()
     {
-        $this->container->setParameter('hwi_oauth.connect', false);
+        $this->container->setParameter('fos_oauth_social_connect.connect', false);
 
         $this->controller->registrationAction($this->request, time());
     }
@@ -53,13 +53,13 @@ class ConnectControllerRegistrationActionTest extends AbstractConnectControllerT
 
         $this->session->expects($this->once())
             ->method('get')
-            ->with('_hwi_oauth.registration_error.'.$key)
+            ->with('_fos_oauth_social_connect.registration_error.'.$key)
             ->willReturn(new \Exception())
         ;
 
         $this->session->expects($this->once())
             ->method('remove')
-            ->with('_hwi_oauth.registration_error.'.$key)
+            ->with('_fos_oauth_social_connect.registration_error.'.$key)
         ;
 
         $this->controller->registrationAction($this->request, $key);
@@ -73,13 +73,13 @@ class ConnectControllerRegistrationActionTest extends AbstractConnectControllerT
 
         $this->session->expects($this->once())
             ->method('get')
-            ->with('_hwi_oauth.registration_error.'.$key)
+            ->with('_fos_oauth_social_connect.registration_error.'.$key)
             ->willReturn($this->createAccountNotLinkedException())
         ;
 
         $this->session->expects($this->once())
             ->method('remove')
-            ->with('_hwi_oauth.registration_error.'.$key)
+            ->with('_fos_oauth_social_connect.registration_error.'.$key)
         ;
 
         $this->makeRegistrationForm();
@@ -92,12 +92,12 @@ class ConnectControllerRegistrationActionTest extends AbstractConnectControllerT
             ->withAnyParameters()
             ->willReturn(false)
         ;
-        $this->container->set('hwi_oauth.registration.form.handler', $registrationFormHandler);
+        $this->container->set('fos_oauth_social_connect.registration.form.handler', $registrationFormHandler);
 
         $this->eventDispatcher->expects($this->once())->method('dispatch');
         $this->eventDispatcher->expects($this->at(0))
             ->method('dispatch')
-            ->with(FOSOAuthSocialConnectorEvents::REGISTRATION_INITIALIZE)
+            ->with(FOSOAuthSocialConnectEvents::REGISTRATION_INITIALIZE)
         ;
 
         $this->twig->expects($this->once())
@@ -116,7 +116,7 @@ class ConnectControllerRegistrationActionTest extends AbstractConnectControllerT
 
         $this->session->expects($this->once())
             ->method('get')
-            ->with('_hwi_oauth.registration_error.'.$key)
+            ->with('_fos_oauth_social_connect.registration_error.'.$key)
             ->willReturn($this->createAccountNotLinkedException())
         ;
 
@@ -130,7 +130,7 @@ class ConnectControllerRegistrationActionTest extends AbstractConnectControllerT
             ->withAnyParameters()
             ->willReturn(true)
         ;
-        $this->container->set('hwi_oauth.registration.form.handler', $registrationFormHandler);
+        $this->container->set('fos_oauth_social_connect.registration.form.handler', $registrationFormHandler);
 
         $this->accountConnector->expects($this->once())
             ->method('connect')
@@ -139,7 +139,7 @@ class ConnectControllerRegistrationActionTest extends AbstractConnectControllerT
         $this->eventDispatcher->expects($this->exactly(3))->method('dispatch');
         $this->eventDispatcher->expects($this->at(0))
             ->method('dispatch')
-            ->with(FOSOAuthSocialConnectorEvents::REGISTRATION_SUCCESS)
+            ->with(FOSOAuthSocialConnectEvents::REGISTRATION_SUCCESS)
         ;
 
         $this->eventDispatcher->expects($this->at(1))
@@ -149,7 +149,7 @@ class ConnectControllerRegistrationActionTest extends AbstractConnectControllerT
 
         $this->eventDispatcher->expects($this->at(2))
             ->method('dispatch')
-            ->with(FOSOAuthSocialConnectorEvents::REGISTRATION_COMPLETED)
+            ->with(FOSOAuthSocialConnectEvents::REGISTRATION_COMPLETED)
         ;
 
         $this->twig->expects($this->once())
@@ -169,7 +169,7 @@ class ConnectControllerRegistrationActionTest extends AbstractConnectControllerT
             ->method('getData')
             ->willReturn(new User());
 
-        $this->container->setParameter('hwi_oauth.fosub_enabled', true);
+        $this->container->setParameter('fos_oauth_social_connect.fosub_enabled', true);
 
         if (interface_exists('FOS\UserBundle\Form\Factory\FactoryInterface')) {
             $registrationFormFactory = $this->getMockBuilder(FactoryInterface::class)
@@ -179,10 +179,10 @@ class ConnectControllerRegistrationActionTest extends AbstractConnectControllerT
                 ->method('createForm')
                 ->willReturn($registrationForm);
 
-            $this->container->set('hwi_oauth.registration.form.factory', $registrationFormFactory);
+            $this->container->set('fos_oauth_social_connect.registration.form.factory', $registrationFormFactory);
         } else {
             // FOSUser 1.3 BC. To be removed.
-            $this->container->set('hwi_oauth.registration.form', $registrationForm);
+            $this->container->set('fos_oauth_social_connect.registration.form', $registrationForm);
         }
     }
 }

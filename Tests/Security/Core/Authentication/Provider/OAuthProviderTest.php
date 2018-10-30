@@ -1,24 +1,15 @@
 <?php
 
-/*
- * This file is part of the HWIOAuthBundle package.
- *
- * (c) Hardware.Info <opensource@hardware.info>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+namespace FOS\Bundle\OAuthSocialConnectBundle\Tests\Security\Core\Authentication\Provider;
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\Security\Core\Authentication\Provider;
-
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface;
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\UserResponseInterface;
-use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\Authentication\Provider\OAuthProvider;
-use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\Authentication\Token\OAuthToken;
-use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\Exception\OAuthAwareExceptionInterface;
-use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\User\OAuthAwareUserProviderInterface;
-use FOS\Bundle\OAuthBSocialConnectBundle\Security\Http\ResourceOwnerMap;
-use FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures\OAuthAwareException;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwnerInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\Response\UserResponseInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\Security\Core\Authentication\Provider\OAuthProvider;
+use FOS\Bundle\OAuthSocialConnectBundle\Security\Core\Authentication\Token\OAuthToken;
+use FOS\Bundle\OAuthSocialConnectBundle\Security\Core\Exception\OAuthAwareExceptionInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\Security\Core\User\OAuthAwareUserProviderInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\Security\Http\ResourceOwnerMap;
+use FOS\Bundle\OAuthSocialConnectBundle\Tests\Fixtures\OAuthAwareException;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\User\UserCheckerInterface;

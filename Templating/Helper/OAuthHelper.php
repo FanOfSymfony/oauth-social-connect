@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Templating\Helper;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Templating\Helper;
 
-use FOS\Bundle\OAuthBSocialConnectBundle\Security\OAuthUtils;
+use FOS\Bundle\OAuthSocialConnectBundle\Security\OAuthUtils;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Templating\Helper\Helper;
 
@@ -80,6 +80,6 @@ class OAuthHelper extends Helper
      */
     public function getName()
     {
-        return 'hwi_oauth';
+        return 'fos_oauth_social_connect';
     }
 }

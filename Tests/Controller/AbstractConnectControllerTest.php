@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\Controller;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Tests\Controller;
 
-use FOS\Bundle\OAuthBSocialConnectBundle\Connect\AccountConnectorInterface;
-use FOS\Bundle\OAuthBSocialConnectBundle\Controller\ConnectController;
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface;
-use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\Exception\AccountNotLinkedException;
-use FOS\Bundle\OAuthBSocialConnectBundle\Security\Http\ResourceOwnerMap;
-use FOS\Bundle\OAuthBSocialConnectBundle\Security\OAuthUtils;
-use FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures\CustomOAuthToken;
-use FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures\CustomUserResponse;
+use FOS\Bundle\OAuthSocialConnectBundle\Connect\AccountConnectorInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\Controller\ConnectController;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwnerInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\Security\Core\Exception\AccountNotLinkedException;
+use FOS\Bundle\OAuthSocialConnectBundle\Security\Http\ResourceOwnerMap;
+use FOS\Bundle\OAuthSocialConnectBundle\Security\OAuthUtils;
+use FOS\Bundle\OAuthSocialConnectBundle\Tests\Fixtures\CustomOAuthToken;
+use FOS\Bundle\OAuthSocialConnectBundle\Tests\Fixtures\CustomUserResponse;
 use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -115,10 +115,10 @@ abstract class AbstractConnectControllerTest extends TestCase
         parent::setUp();
 
         $this->container = new Container();
-        $this->container->setParameter('hwi_oauth.connect', true);
-        $this->container->setParameter('hwi_oauth.firewall_names', array('default'));
-        $this->container->setParameter('hwi_oauth.connect.confirmation', true);
-        $this->container->setParameter('hwi_oauth.grant_rule', 'IS_AUTHENTICATED_REMEMBERED');
+        $this->container->setParameter('fos_oauth_social_connect.connect', true);
+        $this->container->setParameter('fos_oauth_social_connect.firewall_names', array('default'));
+        $this->container->setParameter('fos_oauth_social_connect.connect.confirmation', true);
+        $this->container->setParameter('fos_oauth_social_connect.grant_rule', 'IS_AUTHENTICATED_REMEMBERED');
 
         $this->authorizationChecker = $this->getMockBuilder(AuthorizationCheckerInterface::class)
             ->disableOriginalConstructor()
@@ -154,22 +154,22 @@ abstract class AbstractConnectControllerTest extends TestCase
             ->method('getResourceOwnerByName')
             ->withAnyParameters()
             ->willReturn($this->resourceOwner);
-        $this->container->set('hwi_oauth.resource_ownermap.default', $this->resourceOwnerMap);
+        $this->container->set('fos_oauth_social_connect.resource_ownermap.default', $this->resourceOwnerMap);
 
         $this->accountConnector = $this->getMockBuilder(AccountConnectorInterface::class)
             ->disableOriginalConstructor()
             ->getMock();
-        $this->container->set('hwi_oauth.account.connector', $this->accountConnector);
+        $this->container->set('fos_oauth_social_connect.account.connector', $this->accountConnector);
 
         $this->oAuthUtils = $this->getMockBuilder(OAuthUtils::class)
             ->disableOriginalConstructor()
             ->getMock();
-        $this->container->set('hwi_oauth.security.oauth_utils', $this->oAuthUtils);
+        $this->container->set('fos_oauth_social_connect.security.oauth_utils', $this->oAuthUtils);
 
         $this->userChecker = $this->getMockBuilder(UserCheckerInterface::class)
             ->disableOriginalConstructor()
             ->getMock();
-        $this->container->set('hwi_oauth.user_checker', $this->userChecker);
+        $this->container->set('fos_oauth_social_connect.user_checker', $this->userChecker);
 
         $this->eventDispatcher = $this->getMockBuilder(EventDispatcherInterface::class)
             ->disableOriginalConstructor()

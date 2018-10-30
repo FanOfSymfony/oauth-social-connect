@@ -1,12 +1,12 @@
 <?php
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Form;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Form;
 
 use FOS\UserBundle\Form\Handler\RegistrationFormHandler;
 use FOS\UserBundle\Mailer\MailerInterface;
 use FOS\UserBundle\Model\UserManagerInterface;
 use FOS\UserBundle\Util\TokenGenerator;
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\UserResponseInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\Response\UserResponseInterface;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\PropertyAccess\PropertyAccess;

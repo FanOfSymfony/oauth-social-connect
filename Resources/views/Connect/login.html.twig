@@ -1,10 +1,10 @@
 {% extends '@HWIOAuth/layout.html.twig' %}
 
-{% block hwi_oauth_content %}
+{% block fos_oauth_social_connect_content %}
     {% if error is defined and error %}
         <span>{{ error }}</span>
     {% endif %}
-    {% for owner in hwi_oauth_resource_owners() %}
-    <a href="{{ hwi_oauth_login_url(owner) }}">{{ owner | trans({}, 'HWIOAuthBundle') }}</a> <br />
+    {% for owner in fos_oauth_social_connect_resource_owners() %}
+    <a href="{{ fos_oauth_social_connect_login_url(owner) }}">{{ owner | trans({}, 'HWIOAuthBundle') }}</a> <br />
     {% endfor %}
-{% endblock hwi_oauth_content %}
+{% endblock fos_oauth_social_connect_content %}

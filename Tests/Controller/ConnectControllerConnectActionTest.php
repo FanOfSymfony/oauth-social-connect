@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\Controller;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Tests\Controller;
 
-use FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures\CustomOAuthToken;
+use FOS\Bundle\OAuthSocialConnectBundle\Tests\Fixtures\CustomOAuthToken;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
@@ -19,7 +19,7 @@ class ConnectControllerConnectActionTest extends AbstractConnectControllerTest
 {
     public function testLoginPage()
     {
-        $this->container->setParameter('hwi_oauth.connect', true);
+        $this->container->setParameter('fos_oauth_social_connect.connect', true);
 
         $this->twig->expects($this->once())
             ->method('render')
@@ -44,7 +44,7 @@ class ConnectControllerConnectActionTest extends AbstractConnectControllerTest
 
         $this->router->expects($this->once())
             ->method('generate')
-            ->with('hwi_oauth_connect_registration')
+            ->with('fos_oauth_social_connect_connect_registration')
             ->willReturn('/')
         ;
 
@@ -68,7 +68,7 @@ class ConnectControllerConnectActionTest extends AbstractConnectControllerTest
 
         $this->router->expects($this->once())
             ->method('generate')
-            ->with('hwi_oauth_connect_registration')
+            ->with('fos_oauth_social_connect_connect_registration')
             ->willReturn('/')
         ;
 

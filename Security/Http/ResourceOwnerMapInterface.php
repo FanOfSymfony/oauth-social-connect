@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Security\Http;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Security\Http;
 
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwnerInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

@@ -11,7 +11,7 @@ Next configure a resource owner of type `dailymotion` with appropriate
 ```yaml
 # app/config/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     resource_owners:
         any_name:
             type:                dailymotion
@@ -24,7 +24,7 @@ Optionally you can tune how dialog is displaying by changing [`display`](http://
 ```yaml
 # app/config/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     resource_owners:
         any_name:
             type:                dailymotion

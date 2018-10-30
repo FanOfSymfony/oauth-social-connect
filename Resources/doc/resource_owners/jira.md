@@ -12,7 +12,7 @@ The Client Secret should either be a path to the private key pem file.
 ```yaml
 # app/config/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     resource_owners:
         any_name:
             type:                jira

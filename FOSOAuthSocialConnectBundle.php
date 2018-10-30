@@ -1,15 +1,15 @@
 <?php
 
-namespace FOS\Bundle\SOAuthSocialConnectorBundle;
+namespace FOS\Bundle\OAuthSocialConnectBundle;
 
-use FOS\Bundle\OAuthBundle\DependencyInjection\CompilerPass\SetResourceOwnerServiceNameCompilerPass;
-use FOS\Bundle\OAuthBundle\DependencyInjection\FOSOAuthExtension;
-use FOS\Bundle\OAuthBundle\DependencyInjection\Security\Factory\OAuthFactory;
+use FOS\Bundle\OAuthSocialConnectBundle\DependencyInjection\CompilerPass\SetResourceOwnerServiceNameCompilerPass;
+use FOS\Bundle\OAuthSocialConnectBundle\DependencyInjection\FOSOAuthSocialConnectExtension;
+use FOS\Bundle\OAuthSocialConnectBundle\DependencyInjection\Security\Factory\OAuthFactory;
 use Symfony\Bundle\SecurityBundle\DependencyInjection\SecurityExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class FOSOAuthSocialConnectorEvents extends Bundle
+class FOSOAuthSocialConnectBundle extends Bundle
 {
     /**
      * {@inheritdoc}
@@ -32,11 +32,9 @@ class FOSOAuthSocialConnectorEvents extends Bundle
         // return the right extension instead of "auto-registering" it. Now the
         // alias can be FOS_oauth instead of FOS_o_auth..
         if (null === $this->extension) {
-            return new FOSOAuthExtension();
+            return new FOSOAuthSocialConnectExtension();
         }
 
         return $this->extension;
     }
 }
-ç
-FOSOAuthSocialConnectorEvents

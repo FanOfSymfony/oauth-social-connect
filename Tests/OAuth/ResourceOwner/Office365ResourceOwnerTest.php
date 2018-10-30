@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Tests\OAuth\ResourceOwner;
 
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner\Office365ResourceOwner;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwner\Office365ResourceOwner;
 
 class Office365ResourceOwnerTest extends GenericOAuth2ResourceOwnerTest
 {

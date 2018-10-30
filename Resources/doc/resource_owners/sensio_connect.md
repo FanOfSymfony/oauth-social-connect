@@ -9,7 +9,7 @@ visible at edit page for application you just added.
 ```yaml
 # app/config/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     resource_owners:
         any_name:
             type:                sensio_connect

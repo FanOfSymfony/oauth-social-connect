@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Tests\OAuth\ResourceOwner;
 
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner\FacebookResourceOwner;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwner\FacebookResourceOwner;
 use Symfony\Component\HttpFoundation\Request;
 
 class FacebookResourceOwnerTest extends GenericOAuth2ResourceOwnerTest

@@ -15,7 +15,7 @@ They are to be space delimited. Refer to the [Google documentation](https://deve
 ```yaml
 # app/config/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     resource_owners:
         any_name:
             type:                google
@@ -30,7 +30,7 @@ If you want to use [offline access](https://developers.google.com/accounts/docs/
 ```yaml
 # app/config/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     resource_owners:
         any_name:
             type:                google

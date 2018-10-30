@@ -8,7 +8,7 @@ resource owner:
 ```yaml
 # app/config/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     resource_owners:
         my_custom:
             type:                oauth2
@@ -18,7 +18,7 @@ hwi_oauth:
             authorization_url:   https://path.to/oauth/v2/authorize
             infos_url:           https://path.to/api/user
             scope:               "read"
-            user_response_class: FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\PathUserResponse
+            user_response_class: FOS\Bundle\OAuthSocialConnectBundle\OAuth\Response\PathUserResponse
             paths:
                 identifier: id
                 nickname:   username
@@ -30,7 +30,7 @@ hwi_oauth:
 ```yaml
 # app/config/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     resource_owners:
         my_custom:
             type:                oauth1
@@ -41,7 +41,7 @@ hwi_oauth:
             authorization_url:   https://path.to/oauth/v1/authorize
             infos_url:           https://path.to/api/user
             realm:               "read"
-            user_response_class: FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\PathUserResponse
+            user_response_class: FOS\Bundle\OAuthSocialConnectBundle\OAuth\Response\PathUserResponse
             paths:
                 identifier: id
                 nickname:   username

@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Tests\OAuth\ResourceOwner;
 
 use Http\Client\Common\HttpMethodsClient;
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\RequestDataStorageInterface;
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner\GenericOAuth1ResourceOwner;
-use FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures\CustomUserResponse;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\RequestDataStorageInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwner\GenericOAuth1ResourceOwner;
+use FOS\Bundle\OAuthSocialConnectBundle\Tests\Fixtures\CustomUserResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 class GenericOAuth1ResourceOwnerTest extends ResourceOwnerTestCase

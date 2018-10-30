@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\DependencyInjection;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Tests\DependencyInjection;
 
 use Http\Client\Common\HttpMethodsClient;
 use Http\HttplugBundle\HttplugBundle;
-use FOS\Bundle\OAuthBSocialConnectBundle\DependencyInjection\HWIOAuthExtension;
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\DependencyInjection\FOSOAuthSocialConnectExtension;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwnerInterface;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpFoundation\Request;
@@ -63,10 +63,7 @@ class MyCustomProvider implements ResourceOwnerInterface
     }
 }
 
-/**
- * Code bases on FOSUserBundle tests.
- */
-class HWIOAuthExtensionTest extends TestCase
+class FOSOAuthSocialConnectExtensionTest extends TestCase
 {
     /**
      * @var ContainerBuilder
@@ -78,7 +75,7 @@ class HWIOAuthExtensionTest extends TestCase
         $this->createEmptyConfiguration();
 
         $this->assertHasDefinition(
-            'hwi_oauth.http_client',
+            'fos_oauth_social_connect.http_client',
             HttpMethodsClient::class
         );
     }
@@ -88,7 +85,7 @@ class HWIOAuthExtensionTest extends TestCase
      */
     public function testConfigurationThrowsExceptionUnlessFirewallNameSet()
     {
-        $loader = new HWIOAuthExtension();
+        $loader = new FOSOAuthSocialConnectExtension();
         $config = $this->getEmptyConfig();
         unset($config['firewall_names']);
 
@@ -100,7 +97,7 @@ class HWIOAuthExtensionTest extends TestCase
      */
     public function testConfigurationThrowsExceptionUnlessResourceOwnersSet()
     {
-        $loader = new HWIOAuthExtension();
+        $loader = new FOSOAuthSocialConnectExtension();
         $config = $this->getEmptyConfig();
         unset($config['resource_owners']);
 
@@ -112,7 +109,7 @@ class HWIOAuthExtensionTest extends TestCase
      */
     public function testConfigurationThrowsExceptionUnlessClientIdSet()
     {
-        $loader = new HWIOAuthExtension();
+        $loader = new FOSOAuthSocialConnectExtension();
         $config = $this->getEmptyConfig();
         unset($config['resource_owners']['any_name']['client_id']);
 
@@ -124,7 +121,7 @@ class HWIOAuthExtensionTest extends TestCase
      */
     public function testConfigurationThrowsExceptionUnlessClientSecretSet()
     {
-        $loader = new HWIOAuthExtension();
+        $loader = new FOSOAuthSocialConnectExtension();
         $config = $this->getEmptyConfig();
         unset($config['resource_owners']['any_name']['client_secret']);
 
@@ -136,7 +133,7 @@ class HWIOAuthExtensionTest extends TestCase
      */
     public function testConfigurationThrowsExceptionWhenPathIsEmpty()
     {
-        $loader = new HWIOAuthExtension();
+        $loader = new FOSOAuthSocialConnectExtension();
         $config = $this->getEmptyConfig();
         $config['resource_owners']['any_name']['paths'] = array(
             'path' => '',
@@ -150,7 +147,7 @@ class HWIOAuthExtensionTest extends TestCase
      */
     public function testConfigurationThrowsExceptionWhenUnknownResourceOwnerIsCalled()
     {
-        $loader = new HWIOAuthExtension();
+        $loader = new FOSOAuthSocialConnectExtension();
         $config = $this->getEmptyConfig();
         $config['resource_owners']['unknown'] = array(
             'type' => 'unknown',
@@ -169,7 +166,7 @@ class HWIOAuthExtensionTest extends TestCase
      */
     public function testConfigurationThrowsExceptionResourceOwnerRequiresSomeOptions($invalidConfig)
     {
-        $loader = new HWIOAuthExtension();
+        $loader = new FOSOAuthSocialConnectExtension();
         $config = $this->getEmptyConfig();
         $config['resource_owners'] = array(
             $invalidConfig,
@@ -183,7 +180,7 @@ class HWIOAuthExtensionTest extends TestCase
      */
     public function testConfigurationThrowsExceptionWhenServiceHasSomePaths()
     {
-        $loader = new HWIOAuthExtension();
+        $loader = new FOSOAuthSocialConnectExtension();
         $config = $this->getEmptyConfig();
         $config['resource_owners']['some_service']['paths'] = array(
             'identifier' => 'some_id',
@@ -199,7 +196,7 @@ class HWIOAuthExtensionTest extends TestCase
      */
     public function testConfigurationThrowsExceptionWhenServiceHasMoreOptions()
     {
-        $loader = new HWIOAuthExtension();
+        $loader = new FOSOAuthSocialConnectExtension();
         $config = $this->getEmptyConfig();
         $config['resource_owners']['some_service']['client_id'] = 'client_id';
 
@@ -208,11 +205,11 @@ class HWIOAuthExtensionTest extends TestCase
 
     /**
      * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
-     * @expectedExceptionMessage Invalid configuration for path "hwi_oauth.resource_owners.new_resourceowner": You should set at least the 'type', 'client_id' and the 'client_secret' of a resource owner.
+     * @expectedExceptionMessage Invalid configuration for path "fos_oauth_social_connect.resource_owners.new_resourceowner": You should set at least the 'type', 'client_id' and the 'client_secret' of a resource owner.
      */
     public function testConfigurationThrowsExceptionWhenServiceHasClass()
     {
-        $loader = new HWIOAuthExtension();
+        $loader = new FOSOAuthSocialConnectExtension();
         $config = $this->getEmptyConfig();
         $config['resource_owners']['new_resourceowner']['class'] = 'My\Class';
 
@@ -221,11 +218,11 @@ class HWIOAuthExtensionTest extends TestCase
 
     /**
      * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
-     * @expectedExceptionMessage Invalid configuration for path "hwi_oauth.resource_owners.new_resourceowner": If you're setting a 'class', you must provide a 'oauth1' or 'oauth2' type
+     * @expectedExceptionMessage Invalid configuration for path "fos_oauth_social_connect.resource_owners.new_resourceowner": If you're setting a 'class', you must provide a 'oauth1' or 'oauth2' type
      */
     public function testConfigurationThrowsExceptionWhenServiceHasClassAndWrongType()
     {
-        $loader = new HWIOAuthExtension();
+        $loader = new FOSOAuthSocialConnectExtension();
         $config = $this->getEmptyConfig();
         $config['resource_owners']['new_resourceowner']['class'] = 'My\Class';
         $config['resource_owners']['new_resourceowner']['type'] = 'github';
@@ -237,7 +234,7 @@ class HWIOAuthExtensionTest extends TestCase
 
     public function testConfigurationPassValidOAuth1()
     {
-        $loader = new HWIOAuthExtension();
+        $loader = new FOSOAuthSocialConnectExtension();
         $config = $this->getEmptyConfig();
         $config['resource_owners'] = array(
             'valid' => array(
@@ -261,7 +258,7 @@ class HWIOAuthExtensionTest extends TestCase
 
     public function testConfigurationPassValidOAuth2WithPaths()
     {
-        $loader = new HWIOAuthExtension();
+        $loader = new FOSOAuthSocialConnectExtension();
         $config = $this->getEmptyConfig();
         $config['resource_owners'] = array(
             'valid' => array(
@@ -284,12 +281,12 @@ class HWIOAuthExtensionTest extends TestCase
 
     public function testConfigurationPassValidOAuth1WithClass()
     {
-        $loader = new HWIOAuthExtension();
+        $loader = new FOSOAuthSocialConnectExtension();
         $config = $this->getEmptyConfig();
         $config['resource_owners'] = array(
             'valid' => array(
                 'type' => 'oauth1',
-                'class' => 'FOS\Bundle\OAuthBSocialConnectBundle\Tests\DependencyInjection\MyCustomProvider',
+                'class' => 'FOS\Bundle\OAuthSocialConnectBundle\Tests\DependencyInjection\MyCustomProvider',
                 'client_id' => 'client_id',
                 'client_secret' => 'client_secret',
                 'authorization_url' => 'http://test.pl/authorization_url',
@@ -309,12 +306,12 @@ class HWIOAuthExtensionTest extends TestCase
 
     public function testConfigurationPassValidOAuth2WithClassOnly()
     {
-        $loader = new HWIOAuthExtension();
+        $loader = new FOSOAuthSocialConnectExtension();
         $config = $this->getEmptyConfig();
         $config['resource_owners'] = array(
             'valid' => array(
                 'type' => 'oauth2',
-                'class' => 'FOS\Bundle\OAuthBSocialConnectBundle\Tests\DependencyInjection\MyCustomProvider',
+                'class' => 'FOS\Bundle\OAuthSocialConnectBundle\Tests\DependencyInjection\MyCustomProvider',
                 'client_id' => 'client_id',
                 'client_secret' => 'client_secret',
             ),
@@ -325,12 +322,12 @@ class HWIOAuthExtensionTest extends TestCase
 
     public function testConfigurationPassValidOAuth2WithPathsAndClass()
     {
-        $loader = new HWIOAuthExtension();
+        $loader = new FOSOAuthSocialConnectExtension();
         $config = $this->getEmptyConfig();
         $config['resource_owners'] = array(
             'valid' => array(
                 'type' => 'oauth2',
-                'class' => 'FOS\Bundle\OAuthBSocialConnectBundle\Tests\DependencyInjection\MyCustomProvider',
+                'class' => 'FOS\Bundle\OAuthSocialConnectBundle\Tests\DependencyInjection\MyCustomProvider',
                 'client_id' => 'client_id',
                 'client_secret' => 'client_secret',
                 'authorization_url' => 'http://test.pl/authorization_url',
@@ -349,7 +346,7 @@ class HWIOAuthExtensionTest extends TestCase
 
     public function testConfigurationPassValidOAuth2WithDeepPaths()
     {
-        $loader = new HWIOAuthExtension();
+        $loader = new FOSOAuthSocialConnectExtension();
         $config = $this->getEmptyConfig();
         $config['resource_owners'] = array(
             'valid' => array(
@@ -372,7 +369,7 @@ class HWIOAuthExtensionTest extends TestCase
 
     public function testConfigurationPassValidOAuth2WithResponseClass()
     {
-        $loader = new HWIOAuthExtension();
+        $loader = new FOSOAuthSocialConnectExtension();
         $config = $this->getEmptyConfig();
         $config['resource_owners'] = array(
             'valid' => array(
@@ -393,18 +390,18 @@ class HWIOAuthExtensionTest extends TestCase
     {
         $this->createEmptyConfiguration();
 
-        $this->assertParameter(array('secured_area'), 'hwi_oauth.firewall_names');
-        $this->assertParameter(null, 'hwi_oauth.target_path_parameter');
-        $this->assertParameter(false, 'hwi_oauth.use_referer');
-        $this->assertParameter(false, 'hwi_oauth.failed_use_referer');
-        $this->assertParameter('hwi_oauth_connect', 'hwi_oauth.failed_auth_path');
-        $this->assertParameter(array('any_name' => 'any_name', 'some_service' => 'some_service'), 'hwi_oauth.resource_owners');
+        $this->assertParameter(array('secured_area'), 'fos_oauth_social_connect.firewall_names');
+        $this->assertParameter(null, 'fos_oauth_social_connect.target_path_parameter');
+        $this->assertParameter(false, 'fos_oauth_social_connect.use_referer');
+        $this->assertParameter(false, 'fos_oauth_social_connect.failed_use_referer');
+        $this->assertParameter('fos_oauth_social_connect_connect', 'fos_oauth_social_connect.failed_auth_path');
+        $this->assertParameter(array('any_name' => 'any_name', 'some_service' => 'some_service'), 'fos_oauth_social_connect.resource_owners');
 
-        $this->assertNotHasDefinition('hwi_oauth.user.provider.fosub_bridge');
+        $this->assertNotHasDefinition('fos_oauth_social_connect.user.provider.fosub_bridge');
 
-        $this->assertParameter(false, 'hwi_oauth.connect');
+        $this->assertParameter(false, 'fos_oauth_social_connect.connect');
 
-        $this->assertAlias('security.user_checker', 'hwi_oauth.user_checker');
+        $this->assertAlias('security.user_checker', 'fos_oauth_social_connect.user_checker');
     }
 
     public function provideInvalidData()
@@ -498,7 +495,7 @@ class HWIOAuthExtensionTest extends TestCase
 
     public function testCreateResourceOwnerService()
     {
-        $extension = new HWIOAuthExtension();
+        $extension = new FOSOAuthSocialConnectExtension();
         $extension->createResourceOwnerService($this->containerBuilder, 'my_github', array(
             'type' => 'github',
             'client_id' => '42',
@@ -507,38 +504,38 @@ class HWIOAuthExtensionTest extends TestCase
 
         $definitions = $this->containerBuilder->getDefinitions();
 
-        $this->assertArrayHasKey('hwi_oauth.resource_owner.my_github', $definitions);
-        $this->assertEquals('hwi_oauth.abstract_resource_owner.oauth2', $definitions['hwi_oauth.resource_owner.my_github']->getParent());
-        $this->assertEquals('%hwi_oauth.resource_owner.github.class%', $definitions['hwi_oauth.resource_owner.my_github']->getClass());
+        $this->assertArrayHasKey('fos_oauth_social_connect.resource_owner.my_github', $definitions);
+        $this->assertEquals('fos_oauth_social_connect.abstract_resource_owner.oauth2', $definitions['fos_oauth_social_connect.resource_owner.my_github']->getParent());
+        $this->assertEquals('%fos_oauth_social_connect.resource_owner.github.class%', $definitions['fos_oauth_social_connect.resource_owner.my_github']->getClass());
 
-        $argument2 = $definitions['hwi_oauth.resource_owner.my_github']->getArgument(2);
+        $argument2 = $definitions['fos_oauth_social_connect.resource_owner.my_github']->getArgument(2);
         $this->assertEquals('42', $argument2['client_id']);
         $this->assertEquals('foo', $argument2['client_secret']);
-        $this->assertEquals('my_github', $definitions['hwi_oauth.resource_owner.my_github']->getArgument(3));
+        $this->assertEquals('my_github', $definitions['fos_oauth_social_connect.resource_owner.my_github']->getArgument(3));
     }
 
     public function testCreateResourceOwnerServiceWithService()
     {
-        $extension = new HWIOAuthExtension();
+        $extension = new FOSOAuthSocialConnectExtension();
         $extension->createResourceOwnerService($this->containerBuilder, 'external_ressource_owner', array(
             'service' => 'my.service',
         ));
 
         $aliases = $this->containerBuilder->getAliases();
-        $this->assertArrayHasKey('hwi_oauth.resource_owner.external_ressource_owner', $aliases);
-        $this->assertEquals('my.service', $aliases['hwi_oauth.resource_owner.external_ressource_owner']);
+        $this->assertArrayHasKey('fos_oauth_social_connect.resource_owner.external_ressource_owner', $aliases);
+        $this->assertEquals('my.service', $aliases['fos_oauth_social_connect.resource_owner.external_ressource_owner']);
     }
 
     /**
      * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
-     * @expectedExceptionMessage Class "FOS\Bundle\OAuthBSocialConnectBundle\Tests\DependencyInjection\MyWrongCustomProvider" must implement interface "FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface".
+     * @expectedExceptionMessage Class "FOS\Bundle\OAuthSocialConnectBundle\Tests\DependencyInjection\MyWrongCustomProvider" must implement interface "FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwnerInterface".
      */
     public function testCreateResourceOwnerServiceWithWrongClass()
     {
-        $extension = new HWIOAuthExtension();
+        $extension = new FOSOAuthSocialConnectExtension();
         $extension->createResourceOwnerService($this->containerBuilder, 'external_ressource_owner', array(
             'type' => 'oauth2',
-            'class' => 'FOS\Bundle\OAuthBSocialConnectBundle\Tests\DependencyInjection\MyWrongCustomProvider',
+            'class' => 'FOS\Bundle\OAuthSocialConnectBundle\Tests\DependencyInjection\MyWrongCustomProvider',
             'client_id' => '42',
             'client_secret' => 'foo',
         ));
@@ -546,36 +543,36 @@ class HWIOAuthExtensionTest extends TestCase
 
     public function testCreateResourceOwnerServiceWithClass()
     {
-        $extension = new HWIOAuthExtension();
+        $extension = new FOSOAuthSocialConnectExtension();
         $extension->createResourceOwnerService($this->containerBuilder, 'external_ressource_owner', array(
             'type' => 'oauth2',
-            'class' => 'FOS\Bundle\OAuthBSocialConnectBundle\Tests\DependencyInjection\MyCustomProvider',
+            'class' => 'FOS\Bundle\OAuthSocialConnectBundle\Tests\DependencyInjection\MyCustomProvider',
             'client_id' => '42',
             'client_secret' => 'foo',
         ));
 
         $definitions = $this->containerBuilder->getDefinitions();
 
-        $this->assertArrayHasKey('hwi_oauth.resource_owner.external_ressource_owner', $definitions);
-        $this->assertEquals('hwi_oauth.abstract_resource_owner.oauth2', $definitions['hwi_oauth.resource_owner.external_ressource_owner']->getParent());
-        $this->assertEquals('FOS\Bundle\OAuthBSocialConnectBundle\Tests\DependencyInjection\MyCustomProvider', $definitions['hwi_oauth.resource_owner.external_ressource_owner']->getClass());
+        $this->assertArrayHasKey('fos_oauth_social_connect.resource_owner.external_ressource_owner', $definitions);
+        $this->assertEquals('fos_oauth_social_connect.abstract_resource_owner.oauth2', $definitions['fos_oauth_social_connect.resource_owner.external_ressource_owner']->getParent());
+        $this->assertEquals('FOS\Bundle\OAuthSocialConnectBundle\Tests\DependencyInjection\MyCustomProvider', $definitions['fos_oauth_social_connect.resource_owner.external_ressource_owner']->getClass());
 
-        $argument2 = $definitions['hwi_oauth.resource_owner.external_ressource_owner']->getArgument(2);
+        $argument2 = $definitions['fos_oauth_social_connect.resource_owner.external_ressource_owner']->getArgument(2);
         $this->assertEquals('42', $argument2['client_id']);
         $this->assertEquals('foo', $argument2['client_secret']);
-        $this->assertEquals('external_ressource_owner', $definitions['hwi_oauth.resource_owner.external_ressource_owner']->getArgument(3));
+        $this->assertEquals('external_ressource_owner', $definitions['fos_oauth_social_connect.resource_owner.external_ressource_owner']->getArgument(3));
     }
 
     protected function createEmptyConfiguration()
     {
-        $loader = new HWIOAuthExtension();
+        $loader = new FOSOAuthSocialConnectExtension();
         $config = $this->getEmptyConfig();
         $loader->load(array($config), $this->containerBuilder);
     }
 
     protected function createFullConfiguration()
     {
-        $loader = new HWIOAuthExtension();
+        $loader = new FOSOAuthSocialConnectExtension();
         $config = $this->getFullConfig();
         $loader->load(array($config), $this->containerBuilder);
     }
@@ -593,7 +590,7 @@ resource_owners:
         client_id:           client_id
         client_secret:       client_secret
     some_service:
-        service:             hwi_oauth.abstract_resource_owner.generic
+        service:             fos_oauth_social_connect.abstract_resource_owner.generic
 EOF;
         $parser = new Parser();
 
@@ -638,7 +635,7 @@ resource_owners:
         authorization_url:   https://path.to/oauth/v2/authorize
         infos_url:           https://path.to/api/user
         scope:               ""
-        user_response_class: FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\AdvancedPathUserResponse
+        user_response_class: FOS\Bundle\OAuthSocialConnectBundle\OAuth\Response\AdvancedPathUserResponse
         paths:
             identifier: id
             nickname:   username
@@ -654,7 +651,7 @@ resource_owners:
         authorization_url:   https://path.to/oauth/v1/authorize
         infos_url:           https://path.to/api/user
         realm:               ""
-        user_response_class: FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\PathUserResponse
+        user_response_class: FOS\Bundle\OAuthSocialConnectBundle\OAuth\Response\PathUserResponse
         paths:
             identifier: id
             nickname:   username

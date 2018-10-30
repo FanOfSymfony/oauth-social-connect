@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Tests\OAuth\ResourceOwner;
 
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner\YoutubeResourceOwner;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwner\YoutubeResourceOwner;
 use Symfony\Component\Security\Http\HttpUtils;
 
 class YoutubeResourceOwnerTest extends GenericOAuth2ResourceOwnerTest

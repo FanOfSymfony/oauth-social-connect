@@ -33,11 +33,11 @@ or [`GenericOAuth1ResourceOwner`](https://github.com/hwi/HWIOAuthBundle/blob/mas
 
 
 ```php
-use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\Authentication\Token\OAuthToken;
+use FOS\Bundle\OAuthSocialConnectBundle\Security\Core\Authentication\Token\OAuthToken;
 use Psr\Http\Message\RequestInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner\GenericOAuth2ResourceOwner;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwner\GenericOAuth2ResourceOwner;
 
 class YourResourceOwner extends GenericOAuth2ResourceOwner
 {

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Security\Http;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Security\Http;
 
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -83,7 +83,7 @@ class ResourceOwnerMap implements ContainerAwareInterface, ResourceOwnerMapInter
             return null;
         }
 
-        return $this->container->get('hwi_oauth.resource_owner.'.$name);
+        return $this->container->get('fos_oauth_social_connect.resource_owner.'.$name);
     }
 
     /**

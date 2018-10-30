@@ -1,8 +1,8 @@
 <?php
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\DependencyInjection;
+namespace FOS\Bundle\OAuthSocialConnectBundle\DependencyInjection;
 
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwnerInterface;
 use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\Config\FileLocator;
@@ -19,7 +19,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  * @author Alexander <iam.asm89@gmail.com>
  * @author Joseph Bielawski <stloyd@gmail.com>
  */
-class HWIOAuthExtension extends Extension
+class FOSOAuthSocialConnectExtension extends Extension
 {
     /**
      * {@inheritdoc}
@@ -47,24 +47,24 @@ class HWIOAuthExtension extends Extension
 
         // set current firewall
         if (empty($config['firewall_names'])) {
-            throw new InvalidConfigurationException('The child node "firewall_names" at path "hwi_oauth" must be configured.');
+            throw new InvalidConfigurationException('The child node "firewall_names" at path "fos_oauth_social_connect" must be configured.');
         }
-        $container->setParameter('hwi_oauth.firewall_names', $config['firewall_names']);
+        $container->setParameter('fos_oauth_social_connect.firewall_names', $config['firewall_names']);
 
         // set target path parameter
-        $container->setParameter('hwi_oauth.target_path_parameter', $config['target_path_parameter']);
+        $container->setParameter('fos_oauth_social_connect.target_path_parameter', $config['target_path_parameter']);
 
         // set use referer parameter
-        $container->setParameter('hwi_oauth.use_referer', $config['use_referer']);
+        $container->setParameter('fos_oauth_social_connect.use_referer', $config['use_referer']);
 
         // set failed use referer parameter
-        $container->setParameter('hwi_oauth.failed_use_referer', $config['failed_use_referer']);
+        $container->setParameter('fos_oauth_social_connect.failed_use_referer', $config['failed_use_referer']);
 
         // set failed auth path
-        $container->setParameter('hwi_oauth.failed_auth_path', $config['failed_auth_path']);
+        $container->setParameter('fos_oauth_social_connect.failed_auth_path', $config['failed_auth_path']);
 
         // set grant rule
-        $container->setParameter('hwi_oauth.grant_rule', $config['grant_rule']);
+        $container->setParameter('fos_oauth_social_connect.grant_rule', $config['grant_rule']);
 
         // setup services for all configured resource owners
         $resourceOwners = array();
@@ -72,16 +72,16 @@ class HWIOAuthExtension extends Extension
             $resourceOwners[$name] = $name;
             $this->createResourceOwnerService($container, $name, $options);
         }
-        $container->setParameter('hwi_oauth.resource_owners', $resourceOwners);
+        $container->setParameter('fos_oauth_social_connect.resource_owners', $resourceOwners);
 
-        $oauthUtils = $container->getDefinition('hwi_oauth.security.oauth_utils');
+        $oauthUtils = $container->getDefinition('fos_oauth_social_connect.security.oauth_utils');
         foreach ($config['firewall_names'] as $firewallName) {
-            $oauthUtils->addMethodCall('addResourceOwnerMap', array(new Reference('hwi_oauth.resource_ownermap.'.$firewallName)));
+            $oauthUtils->addMethodCall('addResourceOwnerMap', array(new Reference('fos_oauth_social_connect.resource_ownermap.'.$firewallName)));
         }
 
         $this->createConnectIntegration($container, $config);
 
-        $container->setAlias('hwi_oauth.user_checker', new Alias('security.user_checker', true));
+        $container->setAlias('fos_oauth_social_connect.user_checker', new Alias('security.user_checker', true));
     }
 
     /**
@@ -102,7 +102,7 @@ class HWIOAuthExtension extends Extension
         // alias services
         if (isset($options['service'])) {
             // set the appropriate name for aliased services, compiler pass depends on it
-            $container->setAlias('hwi_oauth.resource_owner.'.$name, new Alias($options['service'], true));
+            $container->setAlias('fos_oauth_social_connect.resource_owner.'.$name, new Alias($options['service'], true));
 
             return;
         }
@@ -113,22 +113,22 @@ class HWIOAuthExtension extends Extension
         // handle external resource owners with given class
         if (isset($options['class'])) {
             if (!is_subclass_of($options['class'], ResourceOwnerInterface::class)) {
-                throw new InvalidConfigurationException(sprintf('Class "%s" must implement interface "FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface".', $options['class']));
+                throw new InvalidConfigurationException(sprintf('Class "%s" must implement interface "FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwnerInterface".', $options['class']));
             }
 
-            $definition = new $definitionClassname('hwi_oauth.abstract_resource_owner.'.$type);
+            $definition = new $definitionClassname('fos_oauth_social_connect.abstract_resource_owner.'.$type);
             $definition->setClass($options['class']);
             unset($options['class']);
         } else {
-            $definition = new $definitionClassname('hwi_oauth.abstract_resource_owner.'.Configuration::getResourceOwnerType($type));
-            $definition->setClass("%hwi_oauth.resource_owner.$type.class%");
+            $definition = new $definitionClassname('fos_oauth_social_connect.abstract_resource_owner.'.Configuration::getResourceOwnerType($type));
+            $definition->setClass("%fos_oauth_social_connect.resource_owner.$type.class%");
         }
 
         $definition->replaceArgument(2, $options);
         $definition->replaceArgument(3, $name);
         $definition->setPublic(true);
 
-        $container->setDefinition('hwi_oauth.resource_owner.'.$name, $definition);
+        $container->setDefinition('fos_oauth_social_connect.resource_owner.'.$name, $definition);
     }
 
     /**
@@ -136,7 +136,7 @@ class HWIOAuthExtension extends Extension
      */
     public function getAlias()
     {
-        return 'hwi_oauth';
+        return 'fos_oauth_social_connect';
     }
 
     /**
@@ -153,47 +153,47 @@ class HWIOAuthExtension extends Extension
         $definitionClassname = $this->getDefinitionClassname();
 
         if (isset($config['connect'])) {
-            $container->setParameter('hwi_oauth.connect', true);
+            $container->setParameter('fos_oauth_social_connect.connect', true);
 
             if (isset($config['fosub'])) {
-                $container->setParameter('hwi_oauth.fosub_enabled', true);
+                $container->setParameter('fos_oauth_social_connect.fosub_enabled', true);
 
-                $definition = $container->setDefinition('hwi_oauth.user.provider.fosub_bridge', new $definitionClassname('hwi_oauth.user.provider.fosub_bridge.def'));
+                $definition = $container->setDefinition('fos_oauth_social_connect.user.provider.fosub_bridge', new $definitionClassname('fos_oauth_social_connect.user.provider.fosub_bridge.def'));
                 $definition->addArgument($config['fosub']['properties']);
 
                 // setup fosub bridge services
-                $container->setAlias('hwi_oauth.account.connector', new Alias('hwi_oauth.user.provider.fosub_bridge', true));
+                $container->setAlias('fos_oauth_social_connect.account.connector', new Alias('fos_oauth_social_connect.user.provider.fosub_bridge', true));
 
-                $definition = $container->setDefinition('hwi_oauth.registration.form.handler.fosub_bridge', new $definitionClassname('hwi_oauth.registration.form.handler.fosub_bridge.def'));
+                $definition = $container->setDefinition('fos_oauth_social_connect.registration.form.handler.fosub_bridge', new $definitionClassname('fos_oauth_social_connect.registration.form.handler.fosub_bridge.def'));
                 $definition->addArgument($config['fosub']['username_iterations']);
 
-                $container->setAlias('hwi_oauth.registration.form.handler', new Alias('hwi_oauth.registration.form.handler.fosub_bridge', true));
+                $container->setAlias('fos_oauth_social_connect.registration.form.handler', new Alias('fos_oauth_social_connect.registration.form.handler.fosub_bridge', true));
 
                 // enable compatibility with FOSUserBundle 1.3.x and 2.x
                 if (interface_exists('FOS\UserBundle\Form\Factory\FactoryInterface')) {
-                    $container->setAlias('hwi_oauth.registration.form.factory', new Alias('fos_user.registration.form.factory', true));
+                    $container->setAlias('fos_oauth_social_connect.registration.form.factory', new Alias('fos_user.registration.form.factory', true));
                 } else {
                     // FOSUser 1.3 BC. To be removed.
                     $definition->setScope('request');
 
-                    $container->setAlias('hwi_oauth.registration.form', new Alias('fos_user.registration.form', true));
+                    $container->setAlias('fos_oauth_social_connect.registration.form', new Alias('fos_user.registration.form', true));
                 }
             } else {
-                $container->setParameter('hwi_oauth.fosub_enabled', false);
+                $container->setParameter('fos_oauth_social_connect.fosub_enabled', false);
             }
 
             foreach ($config['connect'] as $key => $serviceId) {
                 if ('confirmation' === $key) {
-                    $container->setParameter('hwi_oauth.connect.confirmation', $config['connect']['confirmation']);
+                    $container->setParameter('fos_oauth_social_connect.connect.confirmation', $config['connect']['confirmation']);
 
                     continue;
                 }
 
-                $container->setAlias('hwi_oauth.'.str_replace('_', '.', $key), new Alias($serviceId, true));
+                $container->setAlias('fos_oauth_social_connect.'.str_replace('_', '.', $key), new Alias($serviceId, true));
             }
         } else {
-            $container->setParameter('hwi_oauth.fosub_enabled', false);
-            $container->setParameter('hwi_oauth.connect', false);
+            $container->setParameter('fos_oauth_social_connect.fosub_enabled', false);
+            $container->setParameter('fos_oauth_social_connect.connect', false);
         }
     }
 
@@ -218,8 +218,8 @@ class HWIOAuthExtension extends Extension
             );
         }
 
-        $container->setAlias('hwi_oauth.http.client', new Alias($config['http']['client'], true));
-        $container->setAlias('hwi_oauth.http.message_factory', new Alias($config['http']['message_factory'], true));
+        $container->setAlias('fos_oauth_social_connect.http.client', new Alias($config['http']['client'], true));
+        $container->setAlias('fos_oauth_social_connect.http.message_factory', new Alias($config['http']['message_factory'], true));
     }
 
     /**

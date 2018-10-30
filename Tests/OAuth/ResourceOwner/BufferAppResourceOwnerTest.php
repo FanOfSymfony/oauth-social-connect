@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Tests\OAuth\ResourceOwner;
 
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner\BufferAppResourceOwner;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwner\BufferAppResourceOwner;
 
 class BufferAppResourceOwnerTest extends GenericOAuth2ResourceOwnerTest
 {
@@ -34,7 +34,7 @@ json;
         $this->mockHttpClient($this->userResponse, 'application/json; charset=utf-8');
 
         /**
-         * @var \FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\AbstractUserResponse
+         * @var \FOS\Bundle\OAuthSocialConnectBundle\OAuth\Response\AbstractUserResponse
          */
         $userResponse = $this->resourceOwner->getUserInformation(array('access_token' => 'token'));
 

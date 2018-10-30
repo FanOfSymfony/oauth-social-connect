@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\Controller;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Tests\Controller;
 
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,9 +20,9 @@ class ConnectControllerRedirectToServiceActionTest extends AbstractConnectContro
     {
         parent::setUp();
 
-        $this->container->setParameter('hwi_oauth.target_path_parameter', null);
-        $this->container->setParameter('hwi_oauth.use_referer', false);
-        $this->container->setParameter('hwi_oauth.failed_use_referer', false);
+        $this->container->setParameter('fos_oauth_social_connect.target_path_parameter', null);
+        $this->container->setParameter('fos_oauth_social_connect.use_referer', false);
+        $this->container->setParameter('fos_oauth_social_connect.failed_use_referer', false);
 
         $this->oAuthUtils->expects($this->any())
             ->method('getAuthorizationUrl')
@@ -40,7 +40,7 @@ class ConnectControllerRedirectToServiceActionTest extends AbstractConnectContro
 
     public function testTargetPathParameter()
     {
-        $this->container->setParameter('hwi_oauth.target_path_parameter', 'target_path');
+        $this->container->setParameter('fos_oauth_social_connect.target_path_parameter', 'target_path');
         $this->request->attributes->set('target_path', '/target/path');
 
         $this->session->expects($this->once())
@@ -53,7 +53,7 @@ class ConnectControllerRedirectToServiceActionTest extends AbstractConnectContro
 
     public function testUseReferer()
     {
-        $this->container->setParameter('hwi_oauth.use_referer', true);
+        $this->container->setParameter('fos_oauth_social_connect.use_referer', true);
         $this->request->headers->set('Referer', 'https://google.com');
 
         $this->session->expects($this->once())
@@ -66,7 +66,7 @@ class ConnectControllerRedirectToServiceActionTest extends AbstractConnectContro
 
     public function testFailedUseReferer()
     {
-        $this->container->setParameter('hwi_oauth.failed_use_referer', true);
+        $this->container->setParameter('fos_oauth_social_connect.failed_use_referer', true);
         $this->request->headers->set('Referer', 'https://google.com');
 
         $this->session->expects($this->once())

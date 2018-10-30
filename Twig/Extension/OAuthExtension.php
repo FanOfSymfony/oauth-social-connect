@@ -1,8 +1,8 @@
 <?php
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Twig\Extension;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Twig\Extension;
 
-use FOS\Bundle\OAuthBSocialConnectBundle\Templating\Helper\OAuthHelper;
+use FOS\Bundle\OAuthSocialConnectBundle\Templating\Helper\OAuthHelper;
 
 /**
  * OAuthExtension.
@@ -30,9 +30,9 @@ class OAuthExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            new \Twig_SimpleFunction('hwi_oauth_authorization_url', array($this, 'getAuthorizationUrl')),
-            new \Twig_SimpleFunction('hwi_oauth_login_url', array($this, 'getLoginUrl')),
-            new \Twig_SimpleFunction('hwi_oauth_resource_owners', array($this, 'getResourceOwners')),
+            new \Twig_SimpleFunction('fos_oauth_social_connect_authorization_url', array($this, 'getAuthorizationUrl')),
+            new \Twig_SimpleFunction('fos_oauth_social_connect_login_url', array($this, 'getLoginUrl')),
+            new \Twig_SimpleFunction('fos_oauth_social_connect_resource_owners', array($this, 'getResourceOwners')),
         );
     }
 
@@ -73,6 +73,6 @@ class OAuthExtension extends \Twig_Extension
      */
     public function getName()
     {
-        return 'hwi_oauth';
+        return 'fos_oauth_social_connect';
     }
 }

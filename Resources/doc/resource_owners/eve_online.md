@@ -10,7 +10,7 @@ for the available scopes.
 ```yaml
 # app/config/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     resource_owners:
         any_name:
             type:                eve_online
@@ -22,7 +22,7 @@ Optionally, for authenticating to EVE online test servers, you can override endp
 
 ```yaml
 # app/config/config.yml
-hwi_oauth:
+fos_oauth_social_connect:
     resource_owners:
         any_name:
             type:                eve_online

@@ -1,11 +1,11 @@
 Fan Of Symfony - OAuth Social Connect
 ==============
 
-[![Build Status](https://secure.travis-ci.org/hwi/HWIOAuthBundle.svg?branch=master)](http://travis-ci.org/hwi/HWIOAuthBundle) [![Latest Stable Version](https://poser.pugx.org/hwi/oauth-bundle/v/stable.svg)](https://packagist.org/packages/hwi/oauth-bundle) [![Total Downloads](https://poser.pugx.org/hwi/oauth-bundle/downloads.svg)](https://packagist.org/packages/hwi/oauth-bundle) [![Latest Unstable Version](https://poser.pugx.org/hwi/oauth-bundle/v/unstable.svg)](https://packagist.org/packages/hwi/oauth-bundle) [![License](https://poser.pugx.org/hwi/oauth-bundle/license.svg)](https://packagist.org/packages/hwi/oauth-bundle)
+[![Build Status](https://secure.travis-ci.org/FanOfSymfony/oauth-social-connect.svg?branch=master)](http://travis-ci.org/FanOfSymfony/oauth-social-connect) [![Latest Stable Version](https://poser.pugx.org/FanOfSymfony/oauth-social-connect/v/stable.svg)](https://packagist.org/packages/fanofsymfony/oauth-social-connect) [![Total Downloads](https://poser.pugx.org/fanofsymfony/oauth-social-connect/downloads.svg)](https://packagist.org/packages/fanofsymfony/oauth-social-connect) [![Latest Unstable Version](https://poser.pugx.org/fanofsymfony/oauth-social-connect/v/unstable.svg)](https://packagist.org/packages/fanofsymfony/oauth-social-connect) [![License](https://poser.pugx.org/fanofsymfony/oauth-social-connect/license.svg)](https://packagist.org/packages/fanofsymfony/oauth-social-connect)
 
-The HWIOAuthBundle adds support for authenticating users via OAuth1.0a or OAuth2 in Symfony.
+The FOSOAuthSocialConnectBundle adds support for authenticating users via OAuth1.0a, OAuth2 and OpenId in Symfony.
 
-> __Note__: this bundle adds easy way to implement any of OAuth1.0a or OAuth2 provider!
+> __Note__: this bundle adds easy way to implement any of OAuth1.0a, OAuth2 provider or OpenID!
 
 Installation
 ------------
@@ -13,7 +13,7 @@ Installation
 All the installation instructions are located in the documentation, check it for specific
 version:
 
-* [__0.1__](https://github.com/hwi/HWIOAuthBundle/blob/0.3.9/Resources/doc/1-setting_up_the_bundle.md) with support for Symfony `>=2.1,<2.7`
+* [__0.1__](https://github.com/FanOfSymfony/oauth-social-connect/blob/0.0.1/Resources/doc/1-setting_up_the_bundle.md) with support for Symfony `>=3.5`
 
 Documentation
 -------------
@@ -21,10 +21,7 @@ Documentation
 The bulk of the documentation is stored in the `Resources/doc/index.md`
 file in this bundle. Read the documentation for version:
 
-* [__0.6__](https://github.com/hwi/HWIOAuthBundle/blob/master/Resources/doc/index.md) with support for Symfony `>=2.8`
-* [__0.5__](https://github.com/hwi/HWIOAuthBundle/blob/0.5.3/Resources/doc/index.md) with support for Symfony `>=2.3,<4.0`
-* [__0.4__](https://github.com/hwi/HWIOAuthBundle/blob/0.4.3/Resources/doc/index.md) with support for Symfony `>=2.3,<3.0`
-* [__0.3__](https://github.com/hwi/HWIOAuthBundle/blob/0.3.9/Resources/doc/index.md) with support for Symfony `>=2.1,<2.7`
+* [__0.1__](https://github.com/hwi/oauth-social-connect/blob/0.0.1/Resources/doc/index.md) with support for Symfony `>=3.5`
 
 License
 -------

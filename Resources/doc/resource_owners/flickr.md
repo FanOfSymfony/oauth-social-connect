@@ -10,7 +10,7 @@ Please, refer to [documentation](http://www.flickr.com/services/api/auth.oauth.h
 ``` yaml
 # app/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     resource_owners:
         any_name:
             type:          flickr

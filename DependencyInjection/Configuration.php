@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\DependencyInjection;
+namespace FOS\Bundle\OAuthSocialConnectBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -20,7 +20,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  *
  * @author Alexander <iam.asm89@gmail.com>
  */
-class Configuration implements OAuthSocialConnctBundle
+class Configuration implements ConfigurationInterface
 {
     /**
      * Array of supported resource owners, indentation is intentional to easily notice
@@ -145,13 +145,13 @@ class Configuration implements OAuthSocialConnctBundle
      */
     public function getConfigTreeBuilder()
     {
-        $builder = new TreeBuilder('hwi_oauth');
+        $builder = new TreeBuilder('fos_oauth_social_connect');
 
         if (\method_exists($builder, 'getRootNode')) {
             $rootNode = $builder->getRootNode();
         } else {
             // BC layer for symfony/config 4.1 and older
-            $rootNode = $builder->root('hwi_oauth');
+            $rootNode = $builder->root('fos_oauth_social_connect');
         }
 
         $rootNode
@@ -165,7 +165,7 @@ class Configuration implements OAuthSocialConnctBundle
                 ->scalarNode('target_path_parameter')->defaultNull()->end()
                 ->booleanNode('use_referer')->defaultFalse()->end()
                 ->booleanNode('failed_use_referer')->defaultFalse()->end()
-                ->scalarNode('failed_auth_path')->defaultValue('hwi_oauth_connect')->end()
+                ->scalarNode('failed_auth_path')->defaultValue('fos_oauth_social_connect_connect')->end()
                 ->scalarNode('grant_rule')
                     ->defaultValue('IS_AUTHENTICATED_REMEMBERED')
                     ->validate()

@@ -19,7 +19,7 @@ httplug:
         hwi_special:
             factory: 'httplug.factory.guzzle6'
 
-hwi_oauth:
+fos_oauth_social_connect:
     http:
         client: httplug.client.hwi_special # Default to httplug.client.default
         factory: httplug.stream_factory    # Default to httplug.message_factory.default
@@ -34,7 +34,7 @@ On v0.5 and below, you were able to configure your HTTP client like that:
 ```yaml
 # app/config/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     http_client:
         timeout:       10 # Time in seconds, after library will shutdown request, by default: 5
         verify_peer:   false # Setting allowing you to turn off SSL verification, by default: true
@@ -73,7 +73,7 @@ httplug:
                 ignore_errors: false
                 proxy: "example.com:8080"
 
-hwi_oauth:
+fos_oauth_social_connect:
     http:
         client: httplug.client.hwi_special # Then you specify the special service to use.
 ```
@@ -110,7 +110,7 @@ Then configure the bundle to use the service created above:
 ```yaml
 # app/config/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     http:
         client: guzzle_client.hwi_special
         message_factory: guzzle_client.message_factory

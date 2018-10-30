@@ -1,8 +1,8 @@
 <?php
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Connect;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Connect;
 
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\UserResponseInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\Response\UserResponseInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -21,7 +21,3 @@ interface AccountConnectorInterface
      */
     public function connect(UserInterface $user, UserResponseInterface $response);
 }
-
-
-
-FOS\Bundle\OAuthSocialConnect

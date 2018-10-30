@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\Security\Core\User;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Tests\Security\Core\User;
 
 use FOS\UserBundle\Model\UserManagerInterface;
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface;
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\UserResponseInterface;
-use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\User\FOSUBUserProvider;
-use FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures\FOSUser;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwnerInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\Response\UserResponseInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\Security\Core\User\FOSUBUserProvider;
+use FOS\Bundle\OAuthSocialConnectBundle\Tests\Fixtures\FOSUser;
 use PHPUnit\Framework\TestCase;
 
 class FOSUBUserProviderTest extends TestCase
@@ -42,7 +42,7 @@ class FOSUBUserProviderTest extends TestCase
     }
 
     /**
-     * @expectedException \FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\Exception\AccountNotLinkedException
+     * @expectedException \FOS\Bundle\OAuthSocialConnectBundle\Security\Core\Exception\AccountNotLinkedException
      * @expectedExceptionMessage User 'asm89' not found.
      */
     public function testLoadUserByOAuthUserResponseThrowsExceptionWhenUserIsNull()

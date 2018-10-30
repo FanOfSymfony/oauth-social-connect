@@ -11,7 +11,7 @@ Next configure a resource owner of type `salesforce` with appropriate
 ```yaml
 # app/config/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     resource_owners:
         any_name:
             type:                salesforce
@@ -24,7 +24,7 @@ You can also access to the sandbox while not in production:
 ```yaml
 # app/config/config_dev.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     resource_owners:
         any_name: { options: { sandbox: true } }
 ```

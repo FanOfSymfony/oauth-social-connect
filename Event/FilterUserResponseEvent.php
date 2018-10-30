@@ -1,6 +1,6 @@
 <?php
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Event;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Event;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

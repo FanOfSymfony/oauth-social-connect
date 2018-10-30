@@ -96,8 +96,8 @@ In `MyBundle\Security\Core\User` create class, lets call it `MyFOSUBUserProvider
 ```php
 namespace MyBundle\Security\Core\User;
 
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\UserResponseInterface;
-use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\User\FOSUBUserProvider as BaseFOSUBProvider;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\Response\UserResponseInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\Security\Core\User\FOSUBUserProvider as BaseFOSUBProvider;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 class MyFOSUBUserProvider extends BaseFOSUBProvider
@@ -169,11 +169,11 @@ services:
 Add your service for provider as `account_connector` to configuration, and `fosub` section:
 
 ```yml
-hwi_oauth:
+fos_oauth_social_connect:
     connect:
         account_connector: my.custom.user_provider
     firewall_names:
-        - 'hwi_oauth_firewall_name' # name of security firewall configured to work with HWIOAuthBundle
+        - 'fos_oauth_social_connect_firewall_name' # name of security firewall configured to work with HWIOAuthBundle
     fosub:
         username_iterations: 30
         properties:

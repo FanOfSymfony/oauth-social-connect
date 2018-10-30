@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Tests\OAuth\ResourceOwner;
 
 use Http\Discovery\MessageFactoryDiscovery;
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner\JiraResourceOwner;
-use FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures\CustomUserResponse;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwner\JiraResourceOwner;
+use FOS\Bundle\OAuthSocialConnectBundle\Tests\Fixtures\CustomUserResponse;
 use Symfony\Component\Security\Http\HttpUtils;
 
 class JiraResourceOwnerTest extends GenericOAuth1ResourceOwnerTest
@@ -98,7 +98,7 @@ class JiraResourceOwnerTest extends GenericOAuth1ResourceOwnerTest
             }))
         ;
 
-        /** @var $userResponse \FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures\CustomUserResponse */
+        /** @var $userResponse \FOS\Bundle\OAuthSocialConnectBundle\Tests\Fixtures\CustomUserResponse */
         $userResponse = $resourceOwner->getUserInformation(array('oauth_token' => 'token', 'oauth_token_secret' => 'secret'));
 
         $this->assertInstanceOf($class, $userResponse);

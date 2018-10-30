@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response;
+namespace FOS\Bundle\OAuthSocialConnectBundle\OAuth\Response;
 
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 

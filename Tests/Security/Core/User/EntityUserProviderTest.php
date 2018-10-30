@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\Security\Core\User;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Tests\Security\Core\User;
 
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\Persistence\ObjectRepository;
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface;
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\UserResponseInterface;
-use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\User\EntityUserProvider;
-use FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures\User;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwnerInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\Response\UserResponseInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\Security\Core\User\EntityUserProvider;
+use FOS\Bundle\OAuthSocialConnectBundle\Tests\Fixtures\User;
 use PHPUnit\Framework\TestCase;
 
 class EntityUserProviderTest extends TestCase

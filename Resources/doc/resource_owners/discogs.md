@@ -9,7 +9,7 @@ Next configure a resource owner of type `discogs` with appropriate `client_id`,
 ```yaml
 # app/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     resource_owners:
         any_name:
             type:                discogs

@@ -11,7 +11,7 @@ as described by [Linkedin API](https://developer.linkedin.com/documents/profile-
 ```yaml
 # app/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     resource_owners:
         any_name:
             type:           linkedin

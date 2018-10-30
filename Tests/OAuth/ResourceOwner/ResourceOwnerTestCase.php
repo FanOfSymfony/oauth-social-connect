@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Tests\OAuth\ResourceOwner;
 
 use Http\Client\Common\HttpMethodsClient;
 use Http\Discovery\MessageFactoryDiscovery;
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\RequestDataStorageInterface;
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\RequestDataStorageInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwnerInterface;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Security\Http\HttpUtils;
 
@@ -88,7 +88,7 @@ abstract class ResourceOwnerTestCase extends TestCase
      * @param HttpUtils $httpUtils
      * @param array     $options
      *
-     * @return \FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface
+     * @return \FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwnerInterface
      */
     protected function setUpResourceOwner($name, HttpUtils $httpUtils, array $options)
     {

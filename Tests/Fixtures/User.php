@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Tests\Fixtures;
 
 use Symfony\Component\Security\Core\User\UserInterface;
 

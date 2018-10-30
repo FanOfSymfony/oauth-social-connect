@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response;
+namespace FOS\Bundle\OAuthSocialConnectBundle\OAuth\Response;
 
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResponseInterface;
-use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\Authentication\Token\OAuthToken;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResponseInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\Security\Core\Authentication\Token\OAuthToken;
 
 /**
  * @author Alexander <iam.asm89@gmail.com>

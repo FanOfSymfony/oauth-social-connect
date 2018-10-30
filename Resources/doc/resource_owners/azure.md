@@ -12,7 +12,7 @@ should target (`common` by default)
 ```yaml
 # app/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     resource_owners:
         any_name:
             type:          azure

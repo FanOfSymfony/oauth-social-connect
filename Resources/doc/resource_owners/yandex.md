@@ -8,7 +8,7 @@ You don't need a scope, because it's a value you set while register your app.
 ```yaml
 # app/config/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     resource_owners:
         any_name:
             type:                yandex

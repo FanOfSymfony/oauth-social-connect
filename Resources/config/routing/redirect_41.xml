@@ -4,7 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
 
-    <route id="hwi_oauth_service_redirect" path="/{service}">
-        <default key="_controller">FOS\Bundle\OAuthBSocialConnectBundle\Controller\ConnectController::redirectToServiceAction</default>
+    <route id="fos_oauth_social_connect_service_redirect" path="/{service}">
+        <default key="_controller">FOS\Bundle\OAuthSocialConnectBundle\Controller\ConnectController::redirectToServiceAction</default>
     </route>
 </routes>

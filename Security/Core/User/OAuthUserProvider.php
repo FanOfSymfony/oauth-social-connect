@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\User;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Security\Core\User;
 
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\UserResponseInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\Response\UserResponseInterface;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
@@ -56,6 +56,6 @@ class OAuthUserProvider implements UserProviderInterface, OAuthAwareUserProvider
      */
     public function supportsClass($class)
     {
-        return 'HWI\\Bundle\\OAuthBundle\\Security\\Core\\User\\OAuthUser' === $class;
+        return 'FOS\\Bundle\\OAuthSocialConnectBundle\\Security\\Core\\User\\OAuthUser' === $class;
     }
 }

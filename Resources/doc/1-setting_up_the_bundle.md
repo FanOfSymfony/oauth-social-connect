@@ -24,7 +24,7 @@ public function registerBundles()
     $bundles = array(
         // ...
         new Http\HttplugBundle\HttplugBundle(), // If you require the php-http/httplug-bundle package.
-        new FOS\Bundle\OAuthBSocialConnectBundle\HWIOAuthBundle(),
+        new FOS\Bundle\OAuthSocialConnectBundle\HWIOAuthBundle(),
     );
 }
 ```
@@ -38,15 +38,15 @@ Import the `redirect.xml` and `login.xml` routing files in your own routing file
 
 ```yaml
 # app/config/routing.yml
-hwi_oauth_redirect:
+fos_oauth_social_connect_redirect:
     resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
     prefix:   /connect
 
-hwi_oauth_connect:
+fos_oauth_social_connect_connect:
     resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
     prefix:   /connect
 
-hwi_oauth_login:
+fos_oauth_social_connect_login:
     resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
     prefix:   /login
 ```
@@ -57,15 +57,15 @@ Due to some deprecation, Symfony 4.1 users should import the following routing f
 
 ```yaml
 # app/config/routing.yml
-hwi_oauth_redirect:
+fos_oauth_social_connect_redirect:
     resource: "@HWIOAuthBundle/Resources/config/routing/redirect_41.xml"
     prefix:   /connect
 
-hwi_oauth_connect:
+fos_oauth_social_connect_connect:
     resource: "@HWIOAuthBundle/Resources/config/routing/connect_41.xml"
     prefix:   /connect
 
-hwi_oauth_login:
+fos_oauth_social_connect_login:
     resource: "@HWIOAuthBundle/Resources/config/routing/login_41.xml"
     prefix:   /login
 ```

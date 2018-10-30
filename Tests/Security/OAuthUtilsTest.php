@@ -1,19 +1,10 @@
 <?php
 
-/*
- * This file is part of the HWIOAuthBundle package.
- *
- * (c) Hardware.Info <opensource@hardware.info>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+namespace FOS\Bundle\OAuthSocialConnectBundle\Tests\Security;
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\Security;
-
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface;
-use FOS\Bundle\OAuthBSocialConnectBundle\Security\Http\ResourceOwnerMap;
-use FOS\Bundle\OAuthBSocialConnectBundle\Security\OAuthUtils;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwnerInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\Security\Http\ResourceOwnerMap;
+use FOS\Bundle\OAuthSocialConnectBundle\Security\OAuthUtils;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;

@@ -17,7 +17,7 @@ But enough theory, here is example how to fetch user email & picture while using
 ```yaml
 # app/config/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     firewall_names:        [secured_area]
     resource_owners:
         facebook:
@@ -34,7 +34,7 @@ hwi_oauth:
 Yep, that's all! Now you can receive require details in i.e. `loadUserByOAuthUserResponse(UserResponseInterface $response)`:
 
 ```php
-/* @var $response \FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\UserResponseInterface */
+/* @var $response \FOS\Bundle\OAuthSocialConnectBundle\OAuth\Response\UserResponseInterface */
 var_dump(
     $response->getEmail(),
     $response->getProfilePicture()
@@ -50,7 +50,7 @@ as described below:
 
 ```yaml
 # app/config/config.yml
-hwi_oauth:
+fos_oauth_social_connect:
    firewall_names:        [secured_area]
    resource_owners:
        linkedin:
@@ -65,7 +65,7 @@ Again the details can be accessed in i.e. `loadUserByOAuthUserResponse(UserRespo
 
 ```php
 // This method will return all data that was sent from resource owner
-/* @var $response \FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\UserResponseInterface */
+/* @var $response \FOS\Bundle\OAuthSocialConnectBundle\OAuth\Response\UserResponseInterface */
 $data = $response->getData();
 
 var_dump(
@@ -78,7 +78,7 @@ owner into one! Check how this could look:
 
 ```yaml
 # app/config/config.yml
-hwi_oauth:
+fos_oauth_social_connect:
    firewall_names:        [secured_area]
    resource_owners:
        linkedin:
@@ -92,7 +92,7 @@ hwi_oauth:
 Now just check the results:
 
 ```php
-/* @var $response \FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\UserResponseInterface */
+/* @var $response \FOS\Bundle\OAuthSocialConnectBundle\OAuth\Response\UserResponseInterface */
 var_dump(
     $response->getRealName()
 );

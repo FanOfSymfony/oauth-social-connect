@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Tests\Fixtures;
 
-use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\Authentication\Token\OAuthToken;
-use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\Exception\OAuthAwareExceptionInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\Security\Core\Authentication\Token\OAuthToken;
+use FOS\Bundle\OAuthSocialConnectBundle\Security\Core\Exception\OAuthAwareExceptionInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 
 /**

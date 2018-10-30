@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwner;
 
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\SensioConnectUserResponse;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\Response\SensioConnectUserResponse;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**

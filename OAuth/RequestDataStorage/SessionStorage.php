@@ -1,18 +1,9 @@
 <?php
 
-/*
- * This file is part of the HWIOAuthBundle package.
- *
- * (c) Hardware.Info <opensource@hardware.info>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+namespace FOS\Bundle\OAuthSocialConnectBundle\OAuth\RequestDataStorage;
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\OAuth\RequestDataStorage;
-
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\RequestDataStorageInterface;
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\RequestDataStorageInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwnerInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 /**
@@ -82,6 +73,6 @@ class SessionStorage implements RequestDataStorageInterface
      */
     protected function generateKey(ResourceOwnerInterface $resourceOwner, $key, $type)
     {
-        return sprintf('_hwi_oauth.%s.%s.%s.%s', $resourceOwner->getName(), $resourceOwner->getOption('client_id'), $type, $key);
+        return sprintf('_fos_oauth_social_connect.%s.%s.%s.%s', $resourceOwner->getName(), $resourceOwner->getOption('client_id'), $type, $key);
     }
 }

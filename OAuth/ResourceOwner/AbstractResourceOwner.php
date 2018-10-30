@@ -1,23 +1,14 @@
 <?php
 
-/*
- * This file is part of the HWIOAuthBundle package.
- *
- * (c) Hardware.Info <opensource@hardware.info>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwner;
 
 use Http\Client\Common\HttpMethodsClient;
 use Http\Client\Exception;
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Exception\HttpTransportException;
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\RequestDataStorageInterface;
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface;
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\PathUserResponse;
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\UserResponseInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\Exception\HttpTransportException;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\RequestDataStorageInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwnerInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\Response\PathUserResponse;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\Response\UserResponseInterface;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\HttpFoundation\Request as HttpRequest;
 use Symfony\Component\OptionsResolver\OptionsResolver;

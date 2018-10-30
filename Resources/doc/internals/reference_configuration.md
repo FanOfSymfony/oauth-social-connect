@@ -4,7 +4,7 @@ Internals: Reference configuration
 ```yaml
 # app/config/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     # configuration of oauth resource owners to use
     resource_owners:
         github:
@@ -41,7 +41,7 @@ hwi_oauth:
             authorization_url:   https://path.to/oauth/v2/authorize
             infos_url:           https://path.to/api/user
             scope:               "user_details"
-            user_response_class: FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\PathUserResponse
+            user_response_class: FOS\Bundle\OAuthSocialConnectBundle\OAuth\Response\PathUserResponse
             paths:
                 identifier: id
                 nickname:   username
@@ -56,7 +56,7 @@ hwi_oauth:
             authorization_url:   https://path.to/oauth/v1/authorize
             infos_url:           https://path.to/api/user
             realm:               "whatever"
-            user_response_class: FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\PathUserResponse
+            user_response_class: FOS\Bundle\OAuthSocialConnectBundle\OAuth\Response\PathUserResponse
             paths:
                 identifier: id
                 nickname:   username
@@ -120,13 +120,13 @@ security:
 
                 # FOSUB integration
                 oauth_user_provider:
-                    service: hwi_oauth.user.provider.fosub_bridge
+                    service: fos_oauth_social_connect.user.provider.fosub_bridge
 ```
 
 ```yaml
 # app/config/routing.yml
 
-hwi_oauth_redirect:
+fos_oauth_social_connect_redirect:
     resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
     prefix:   /connect
 

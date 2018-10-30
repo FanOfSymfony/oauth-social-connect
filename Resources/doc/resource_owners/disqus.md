@@ -10,7 +10,7 @@ please check the [documentation](http://disqus.com/api/docs/permissions/).
 ```yaml
 # app/config/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     resource_owners:
         any_name:
             type:                disqus

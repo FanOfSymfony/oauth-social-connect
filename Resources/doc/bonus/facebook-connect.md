@@ -9,7 +9,7 @@ This guide bases on Symfony 2.1+ and the [AcmeDemoBundle](https://github.com/sym
 ```yaml
 # app/config/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     firewall_names:        [secured_area]
     resource_owners:
         facebook:
@@ -21,8 +21,8 @@ hwi_oauth:
                 display: popup #dialog is optimized for popup window
 
 services:
-    hwi_oauth.user.provider.entity:
-        class: FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\User\OAuthUserProvider
+    fos_oauth_social_connect.user.provider.entity:
+        class: FOS\Bundle\OAuthSocialConnectBundle\Security\Core\User\OAuthUserProvider
 ```
 
 ### Import Routing
@@ -30,7 +30,7 @@ services:
 ```yaml
 # app/config/routing.yml
 
-hwi_oauth_redirect:
+fos_oauth_social_connect_redirect:
     resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
     prefix:   /demo/secured/connect
 
@@ -53,7 +53,7 @@ firewalls:
             login_path:        /demo/secured/login
             failure_path:      /demo/secured/login
             oauth_user_provider:
-                service: hwi_oauth.user.provider.entity
+                service: fos_oauth_social_connect.user.provider.entity
 
         # Turn on anonymous for testings need.
         anonymous: ~
@@ -93,12 +93,12 @@ The following example bases also on the Facebook ["Login with Javascript SDK"](h
                 if (response.status === 'connected') {
                     // connected
                     alert('Already connected, redirect to login page to create token.');
-                    document.location = "{{ url("hwi_oauth_service_redirect", {service: "facebook"}) }}";
+                    document.location = "{{ url("fos_oauth_social_connect_service_redirect", {service: "facebook"}) }}";
                 } else {
                     // not_authorized
                     FB.login(function(response) {
                         if (response.authResponse) {
-                            document.location = "{{ url("hwi_oauth_service_redirect", {service: "facebook"}) }}";
+                            document.location = "{{ url("fos_oauth_social_connect_service_redirect", {service: "facebook"}) }}";
                         } else {
                             alert('Cancelled.');
                         }

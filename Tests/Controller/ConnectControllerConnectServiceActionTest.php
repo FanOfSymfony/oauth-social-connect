@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\Controller;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Tests\Controller;
 
-use FOS\Bundle\OAuthBSocialConnectBundle\FOSOAuthSocialConnectorEvents;
-use FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures\CustomOAuthToken;
+use FOS\Bundle\OAuthSocialConnectBundle\FOSOAuthSocialConnectEvents;
+use FOS\Bundle\OAuthSocialConnectBundle\Tests\Fixtures\CustomOAuthToken;
 use Symfony\Component\Form\FormInterface;
 
 class ConnectControllerConnectServiceActionTest extends AbstractConnectControllerTest
@@ -22,7 +22,7 @@ class ConnectControllerConnectServiceActionTest extends AbstractConnectControlle
      */
     public function testNotEnabled()
     {
-        $this->container->setParameter('hwi_oauth.connect', false);
+        $this->container->setParameter('fos_oauth_social_connect.connect', false);
 
         $this->controller->connectServiceAction($this->request, 'facebook');
     }
@@ -43,7 +43,7 @@ class ConnectControllerConnectServiceActionTest extends AbstractConnectControlle
      */
     public function testUnknownResourceOwner()
     {
-        $this->container->setParameter('hwi_oauth.firewall_names', []);
+        $this->container->setParameter('fos_oauth_social_connect.firewall_names', []);
 
         $this->mockAuthorizationCheck();
 
@@ -60,7 +60,7 @@ class ConnectControllerConnectServiceActionTest extends AbstractConnectControlle
 
         $this->session->expects($this->once())
             ->method('get')
-            ->with('_hwi_oauth.connect_confirmation.'.$key)
+            ->with('_fos_oauth_social_connect.connect_confirmation.'.$key)
             ->willReturn(array())
         ;
 
@@ -80,7 +80,7 @@ class ConnectControllerConnectServiceActionTest extends AbstractConnectControlle
         $this->eventDispatcher->expects($this->once())->method('dispatch');
         $this->eventDispatcher->expects($this->at(0))
             ->method('dispatch')
-            ->with(FOSOAuthSocialConnectorEvents::CONNECT_INITIALIZE)
+            ->with(FOSOAuthSocialConnectEvents::CONNECT_INITIALIZE)
         ;
 
         $this->twig->expects($this->once())
@@ -102,7 +102,7 @@ class ConnectControllerConnectServiceActionTest extends AbstractConnectControlle
 
         $this->session->expects($this->once())
             ->method('get')
-            ->with('_hwi_oauth.connect_confirmation.'.$key)
+            ->with('_fos_oauth_social_connect.connect_confirmation.'.$key)
             ->willReturn(array())
         ;
 
@@ -125,11 +125,11 @@ class ConnectControllerConnectServiceActionTest extends AbstractConnectControlle
         $this->eventDispatcher->expects($this->exactly(2))->method('dispatch');
         $this->eventDispatcher->expects($this->at(0))
             ->method('dispatch')
-            ->with(FOSOAuthSocialConnectorEvents::CONNECT_CONFIRMED)
+            ->with(FOSOAuthSocialConnectEvents::CONNECT_CONFIRMED)
         ;
         $this->eventDispatcher->expects($this->at(1))
             ->method('dispatch')
-            ->with(FOSOAuthSocialConnectorEvents::CONNECT_COMPLETED)
+            ->with(FOSOAuthSocialConnectEvents::CONNECT_COMPLETED)
         ;
 
         $this->twig->expects($this->once())
@@ -145,13 +145,13 @@ class ConnectControllerConnectServiceActionTest extends AbstractConnectControlle
         $key = time();
 
         $this->request->query->set('key', $key);
-        $this->container->setParameter('hwi_oauth.connect.confirmation', false);
+        $this->container->setParameter('fos_oauth_social_connect.connect.confirmation', false);
 
         $this->mockAuthorizationCheck();
 
         $this->session->expects($this->once())
             ->method('get')
-            ->with('_hwi_oauth.connect_confirmation.'.$key)
+            ->with('_fos_oauth_social_connect.connect_confirmation.'.$key)
             ->willReturn(array())
         ;
 
@@ -163,11 +163,11 @@ class ConnectControllerConnectServiceActionTest extends AbstractConnectControlle
         $this->eventDispatcher->expects($this->exactly(2))->method('dispatch');
         $this->eventDispatcher->expects($this->at(0))
             ->method('dispatch')
-            ->with(FOSOAuthSocialConnectorEvents::CONNECT_CONFIRMED)
+            ->with(FOSOAuthSocialConnectEvents::CONNECT_CONFIRMED)
         ;
         $this->eventDispatcher->expects($this->at(1))
             ->method('dispatch')
-            ->with(FOSOAuthSocialConnectorEvents::CONNECT_COMPLETED)
+            ->with(FOSOAuthSocialConnectEvents::CONNECT_COMPLETED)
         ;
 
         $this->twig->expects($this->once())

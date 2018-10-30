@@ -10,7 +10,7 @@ To make this bundle work you need to add the following to your app/config/config
 ```yaml
 # app/config/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     # list of names of the firewalls in which this bundle is active, this setting MUST be set
     firewall_names: [secured_area]
 
@@ -91,7 +91,7 @@ hwi_oauth:
 Set the _csrf_ option to **true** in the resource owner's configuration in order to protect your users from [CSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)) attacks.
 ```yaml
 # app/config/config.yml
-hwi_oauth:
+fos_oauth_social_connect:
     resource_owners:
         any_name:
             type:                resource_owner_of_choice

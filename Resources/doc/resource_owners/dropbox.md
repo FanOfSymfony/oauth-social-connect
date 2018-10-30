@@ -9,7 +9,7 @@ Next configure a resource owner of type `dropbox` with appropriate
 ```yaml
 # app/config/config.yml
 
-hwi_oauth:
+fos_oauth_social_connect:
     resource_owners:
         dropbox:
             type:                dropbox

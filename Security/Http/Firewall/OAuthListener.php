@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace FOS\Bundle\OAuthBSocialConnectBundle\Security\Http\Firewall;
+namespace FOS\Bundle\OAuthSocialConnectBundle\Security\Http\Firewall;
 
-use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface;
-use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\Authentication\Token\OAuthToken;
-use FOS\Bundle\OAuthBSocialConnectBundle\Security\Http\ResourceOwnerMapInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\OAuth\ResourceOwnerInterface;
+use FOS\Bundle\OAuthSocialConnectBundle\Security\Core\Authentication\Token\OAuthToken;
+use FOS\Bundle\OAuthSocialConnectBundle\Security\Http\ResourceOwnerMapInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
@@ -88,7 +88,7 @@ class OAuthListener extends AbstractAuthenticationListener
         if ($request->query->has('authenticated') && $resourceOwner->getOption('auth_with_one_url')) {
             $request->attributes->set('service', $resourceOwner->getName());
 
-            return new RedirectResponse(sprintf('%s?code=%s&authenticated=true', $this->httpUtils->generateUri($request, 'hwi_oauth_connect_service'), $request->query->get('code')));
+            return new RedirectResponse(sprintf('%s?code=%s&authenticated=true', $this->httpUtils->generateUri($request, 'fos_oauth_social_connect_connect_service'), $request->query->get('code')));
         }
 
         $resourceOwner->isCsrfTokenValid($request->get('state'));
