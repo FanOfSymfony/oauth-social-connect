@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\Security\Core\User;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\Security\Core\User;
 
-use HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface;
-use HWI\Bundle\OAuthBundle\Security\Core\User\OAuthUser;
-use HWI\Bundle\OAuthBundle\Security\Core\User\OAuthUserProvider;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\UserResponseInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\User\OAuthUser;
+use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\User\OAuthUserProvider;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Security\Core\User\User;
 

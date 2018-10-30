@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\Fixtures;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures;
 
-use HWI\Bundle\OAuthBundle\OAuth\Response\AbstractUserResponse;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\AbstractUserResponse;
 
 /**
  * CustomUserResponse.

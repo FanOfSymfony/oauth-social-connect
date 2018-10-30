@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\OAuth\ResourceOwner;
 
-use HWI\Bundle\OAuthBundle\OAuth\ResourceOwner\RedditResourceOwner;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner\RedditResourceOwner;
 
 class RedditResourceOwnerTest extends GenericOAuth2ResourceOwnerTest
 {

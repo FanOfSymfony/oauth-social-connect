@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Security\Core\User;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\User;
 
 use Symfony\Component\Security\Core\User\UserInterface;
 

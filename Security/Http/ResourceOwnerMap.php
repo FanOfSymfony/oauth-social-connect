@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Security\Http;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Security\Http;
 
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;

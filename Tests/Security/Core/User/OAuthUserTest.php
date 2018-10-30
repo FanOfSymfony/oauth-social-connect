@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\Security\Core\User;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\Security\Core\User;
 
-use HWI\Bundle\OAuthBundle\Security\Core\User\OAuthUser;
+use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\User\OAuthUser;
 use PHPUnit\Framework\TestCase;
 
 class OAuthUserTest extends TestCase

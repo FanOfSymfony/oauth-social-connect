@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\DependencyInjection\CompilerPass;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\DependencyInjection\CompilerPass;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

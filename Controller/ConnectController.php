@@ -1,24 +1,15 @@
 <?php
 
-/*
- * This file is part of the HWIOAuthBundle package.
- *
- * (c) Hardware.Info <opensource@hardware.info>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Controller;
 
-namespace HWI\Bundle\OAuthBundle\Controller;
-
-use HWI\Bundle\OAuthBundle\Event\FilterUserResponseEvent;
-use HWI\Bundle\OAuthBundle\Event\FormEvent;
-use HWI\Bundle\OAuthBundle\Event\GetResponseUserEvent;
-use HWI\Bundle\OAuthBundle\HWIOAuthEvents;
-use HWI\Bundle\OAuthBundle\OAuth\ResourceOwnerInterface;
-use HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface;
-use HWI\Bundle\OAuthBundle\Security\Core\Authentication\Token\OAuthToken;
-use HWI\Bundle\OAuthBundle\Security\Core\Exception\AccountNotLinkedException;
+use FOS\Bundle\OAuthBSocialConnectBundle\Event\FilterUserResponseEvent;
+use FOS\Bundle\OAuthBSocialConnectBundle\Event\FormEvent;
+use FOS\Bundle\OAuthBSocialConnectBundle\Event\GetResponseUserEvent;
+use FOS\Bundle\OAuthBSocialConnectBundle\FOSOAuthSocialConnectorEvents;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\UserResponseInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\Authentication\Token\OAuthToken;
+use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\Exception\AccountNotLinkedException;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\FormInterface;
@@ -140,7 +131,7 @@ class ConnectController extends Controller
         $formHandler = $this->container->get('hwi_oauth.registration.form.handler');
         if ($formHandler->process($request, $form, $userInformation)) {
             $event = new FormEvent($form, $request);
-            $this->get('event_dispatcher')->dispatch(HWIOAuthEvents::REGISTRATION_SUCCESS, $event);
+            $this->get('event_dispatcher')->dispatch(FOSOAuthSocialConnectorEvents::REGISTRATION_SUCCESS, $event);
 
             $this->container->get('hwi_oauth.account.connector')->connect($form->getData(), $userInformation);
 
@@ -158,7 +149,7 @@ class ConnectController extends Controller
             }
 
             $event = new FilterUserResponseEvent($form->getData(), $request, $response);
-            $this->get('event_dispatcher')->dispatch(HWIOAuthEvents::REGISTRATION_COMPLETED, $event);
+            $this->get('event_dispatcher')->dispatch(FOSOAuthSocialConnectorEvents::REGISTRATION_COMPLETED, $event);
 
             return $response;
         }
@@ -167,7 +158,7 @@ class ConnectController extends Controller
         $session->set('_hwi_oauth.registration_error.'.$key, $error);
 
         $event = new GetResponseUserEvent($form->getData(), $request);
-        $this->get('event_dispatcher')->dispatch(HWIOAuthEvents::REGISTRATION_INITIALIZE, $event);
+        $this->get('event_dispatcher')->dispatch(FOSOAuthSocialConnectorEvents::REGISTRATION_INITIALIZE, $event);
 
         if ($response = $event->getResponse()) {
             return $response;
@@ -254,7 +245,7 @@ class ConnectController extends Controller
         }
 
         $event = new GetResponseUserEvent($this->getUser(), $request);
-        $this->get('event_dispatcher')->dispatch(HWIOAuthEvents::CONNECT_INITIALIZE, $event);
+        $this->get('event_dispatcher')->dispatch(FOSOAuthSocialConnectorEvents::CONNECT_INITIALIZE, $event);
 
         if ($response = $event->getResponse()) {
             return $response;
@@ -459,7 +450,7 @@ class ConnectController extends Controller
         $userInformation = $resourceOwner->getUserInformation($accessToken);
 
         $event = new GetResponseUserEvent($currentUser, $request);
-        $this->get('event_dispatcher')->dispatch(HWIOAuthEvents::CONNECT_CONFIRMED, $event);
+        $this->get('event_dispatcher')->dispatch(FOSOAuthSocialConnectorEvents::CONNECT_CONFIRMED, $event);
 
         $this->container->get('hwi_oauth.account.connector')->connect($currentUser, $userInformation);
 
@@ -485,7 +476,7 @@ class ConnectController extends Controller
         }
 
         $event = new FilterUserResponseEvent($currentUser, $request, $response);
-        $this->get('event_dispatcher')->dispatch(HWIOAuthEvents::CONNECT_COMPLETED, $event);
+        $this->get('event_dispatcher')->dispatch(FOSOAuthSocialConnectorEvents::CONNECT_COMPLETED, $event);
 
         return $response;
     }

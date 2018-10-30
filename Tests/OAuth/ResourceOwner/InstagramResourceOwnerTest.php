@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\OAuth\ResourceOwner;
 
-use HWI\Bundle\OAuthBundle\OAuth\ResourceOwner\InstagramResourceOwner;
-use HWI\Bundle\OAuthBundle\Tests\Fixtures\CustomUserResponse;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner\InstagramResourceOwner;
+use FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures\CustomUserResponse;
 
 class InstagramResourceOwnerTest extends GenericOAuth2ResourceOwnerTest
 {

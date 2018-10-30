@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\Controller;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\Controller;
 
 use FOS\UserBundle\Form\Factory\FactoryInterface;
-use HWI\Bundle\OAuthBundle\Form\RegistrationFormHandlerInterface;
-use HWI\Bundle\OAuthBundle\HWIOAuthEvents;
-use HWI\Bundle\OAuthBundle\Tests\Fixtures\User;
+use FOS\Bundle\OAuthBSocialConnectBundle\Form\RegistrationFormHandlerInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\FOSOAuthSocialConnectorEvents;
+use FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures\User;
 use Symfony\Component\Form\Form;
 use Symfony\Component\Security\Http\SecurityEvents;
 
@@ -97,7 +97,7 @@ class ConnectControllerRegistrationActionTest extends AbstractConnectControllerT
         $this->eventDispatcher->expects($this->once())->method('dispatch');
         $this->eventDispatcher->expects($this->at(0))
             ->method('dispatch')
-            ->with(HWIOAuthEvents::REGISTRATION_INITIALIZE)
+            ->with(FOSOAuthSocialConnectorEvents::REGISTRATION_INITIALIZE)
         ;
 
         $this->twig->expects($this->once())
@@ -139,7 +139,7 @@ class ConnectControllerRegistrationActionTest extends AbstractConnectControllerT
         $this->eventDispatcher->expects($this->exactly(3))->method('dispatch');
         $this->eventDispatcher->expects($this->at(0))
             ->method('dispatch')
-            ->with(HWIOAuthEvents::REGISTRATION_SUCCESS)
+            ->with(FOSOAuthSocialConnectorEvents::REGISTRATION_SUCCESS)
         ;
 
         $this->eventDispatcher->expects($this->at(1))
@@ -149,7 +149,7 @@ class ConnectControllerRegistrationActionTest extends AbstractConnectControllerT
 
         $this->eventDispatcher->expects($this->at(2))
             ->method('dispatch')
-            ->with(HWIOAuthEvents::REGISTRATION_COMPLETED)
+            ->with(FOSOAuthSocialConnectorEvents::REGISTRATION_COMPLETED)
         ;
 
         $this->twig->expects($this->once())

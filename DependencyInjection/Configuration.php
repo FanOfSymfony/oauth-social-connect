@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\DependencyInjection;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 /**
- * Configuration for the extension.
+ * Configuration for the extension.OAuthBocialConnectBundle
  *
  * @author Alexander <iam.asm89@gmail.com>
  */
-class Configuration implements ConfigurationInterface
+class Configuration implements OAuthSocialConnctBundle
 {
     /**
      * Array of supported resource owners, indentation is intentional to easily notice

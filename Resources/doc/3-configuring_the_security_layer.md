@@ -5,7 +5,7 @@ Step 3: Configuring the security layer
 
 The bundle needs a service that is able to load users based on the user
 response of the oauth endpoint. If you have a custom service it should
-implement the interface: `HWI\Bundle\OAuthBundle\Security\Core\User\OAuthAwareUserProviderInterface`.
+implement the interface: `FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\User\OAuthAwareUserProviderInterface`.
 
 The HWIOAuthBundle also ships with three default implementations:
 
@@ -48,7 +48,7 @@ Configure `FOSUBUserProvider` service:
 ```yaml
 # app/config/services.yml
 my.oauth_aware.user_provider.service:
-    class: HWI\Bundle\OAuthBundle\Security\Core\User\FOSUBUserProvider
+    class: FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\User\FOSUBUserProvider
     arguments:
         - '@fos_user.user_manager'
         - ['pass properties as array']

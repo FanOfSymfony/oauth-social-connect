@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\OAuth\ResourceOwner;
 
-use HWI\Bundle\OAuthBundle\OAuth\ResourceOwner\MailRuResourceOwner;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner\MailRuResourceOwner;
 
 class MailRuResourceOwnerTest extends GenericOAuth2ResourceOwnerTest
 {

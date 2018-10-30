@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\Security;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\Security;
 
-use HWI\Bundle\OAuthBundle\OAuth\ResourceOwnerInterface;
-use HWI\Bundle\OAuthBundle\Security\Http\ResourceOwnerMap;
-use HWI\Bundle\OAuthBundle\Security\OAuthUtils;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\Security\Http\ResourceOwnerMap;
+use FOS\Bundle\OAuthBSocialConnectBundle\Security\OAuthUtils;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;

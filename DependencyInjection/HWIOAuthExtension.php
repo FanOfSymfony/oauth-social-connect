@@ -1,17 +1,8 @@
 <?php
 
-/*
- * This file is part of the HWIOAuthBundle package.
- *
- * (c) Hardware.Info <opensource@hardware.info>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+namespace FOS\Bundle\OAuthBSocialConnectBundle\DependencyInjection;
 
-namespace HWI\Bundle\OAuthBundle\DependencyInjection;
-
-use HWI\Bundle\OAuthBundle\OAuth\ResourceOwnerInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface;
 use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\Config\FileLocator;
@@ -122,7 +113,7 @@ class HWIOAuthExtension extends Extension
         // handle external resource owners with given class
         if (isset($options['class'])) {
             if (!is_subclass_of($options['class'], ResourceOwnerInterface::class)) {
-                throw new InvalidConfigurationException(sprintf('Class "%s" must implement interface "HWI\Bundle\OAuthBundle\OAuth\ResourceOwnerInterface".', $options['class']));
+                throw new InvalidConfigurationException(sprintf('Class "%s" must implement interface "FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface".', $options['class']));
             }
 
             $definition = new $definitionClassname('hwi_oauth.abstract_resource_owner.'.$type);

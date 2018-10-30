@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Security\Core\User;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\User;
 
 use FOS\UserBundle\Model\User;
 use FOS\UserBundle\Model\UserManagerInterface;
-use HWI\Bundle\OAuthBundle\Connect\AccountConnectorInterface;
-use HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface;
-use HWI\Bundle\OAuthBundle\Security\Core\Exception\AccountNotLinkedException;
+use FOS\Bundle\OAuthBSocialConnectBundle\Connect\AccountConnectorInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\UserResponseInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\Exception\AccountNotLinkedException;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\PropertyAccess\PropertyAccessor;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;

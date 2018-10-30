@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\OAuth\ResourceOwner;
 
-use HWI\Bundle\OAuthBundle\OAuth\ResourceOwner\Auth0ResourceOwner;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner\Auth0ResourceOwner;
 use Symfony\Component\Security\Http\HttpUtils;
 
 class Auth0ResourceOwnerTest extends GenericOAuth2ResourceOwnerTest

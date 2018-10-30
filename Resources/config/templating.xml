@@ -5,7 +5,7 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="hwi_oauth.templating.helper.oauth.class">HWI\Bundle\OAuthBundle\Templating\Helper\OAuthHelper</parameter>
+        <parameter key="hwi_oauth.templating.helper.oauth.class">FOS\Bundle\OAuthBSocialConnectBundle\Templating\Helper\OAuthHelper</parameter>
     </parameters>
 
     <services>
@@ -16,3 +16,5 @@
         </service>
     </services>
 </container>
+
+        <hwi_oauth>-> fos_oauth_social_connector</hwi_oauth>

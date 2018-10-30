@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Security\Core\Authentication\Provider;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\Authentication\Provider;
 
-use HWI\Bundle\OAuthBundle\OAuth\ResourceOwnerInterface;
-use HWI\Bundle\OAuthBundle\Security\Core\Authentication\Token\OAuthToken;
-use HWI\Bundle\OAuthBundle\Security\Core\Exception\OAuthAwareExceptionInterface;
-use HWI\Bundle\OAuthBundle\Security\Core\User\OAuthAwareUserProviderInterface;
-use HWI\Bundle\OAuthBundle\Security\Http\ResourceOwnerMapInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\Authentication\Token\OAuthToken;
+use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\Exception\OAuthAwareExceptionInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\User\OAuthAwareUserProviderInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\Security\Http\ResourceOwnerMapInterface;
 use Symfony\Component\Security\Core\Authentication\Provider\AuthenticationProviderInterface;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;

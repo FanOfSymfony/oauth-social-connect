@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner;
 
-use HWI\Bundle\OAuthBundle\Security\Core\Authentication\Token\OAuthToken;
-use HWI\Bundle\OAuthBundle\Security\OAuthUtils;
+use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\Authentication\Token\OAuthToken;
+use FOS\Bundle\OAuthBSocialConnectBundle\Security\OAuthUtils;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;

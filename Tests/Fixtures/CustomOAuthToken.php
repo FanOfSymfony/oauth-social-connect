@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\Fixtures;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures;
 
-use HWI\Bundle\OAuthBundle\Security\Core\Authentication\Token\OAuthToken;
+use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\Authentication\Token\OAuthToken;
 
 class CustomOAuthToken extends OAuthToken
 {

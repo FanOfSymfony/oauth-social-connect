@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\OAuth\ResourceOwner;
 
-use HWI\Bundle\OAuthBundle\OAuth\ResourceOwner\WordpressResourceOwner;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner\WordpressResourceOwner;
 
 class WordpressResourceOwnerTest extends GenericOAuth2ResourceOwnerTest
 {

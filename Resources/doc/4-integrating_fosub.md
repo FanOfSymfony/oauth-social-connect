@@ -96,8 +96,8 @@ In `MyBundle\Security\Core\User` create class, lets call it `MyFOSUBUserProvider
 ```php
 namespace MyBundle\Security\Core\User;
 
-use HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface;
-use HWI\Bundle\OAuthBundle\Security\Core\User\FOSUBUserProvider as BaseFOSUBProvider;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\UserResponseInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\User\FOSUBUserProvider as BaseFOSUBProvider;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 class MyFOSUBUserProvider extends BaseFOSUBProvider

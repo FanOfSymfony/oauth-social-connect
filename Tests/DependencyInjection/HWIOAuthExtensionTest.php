@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\DependencyInjection;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\DependencyInjection;
 
 use Http\Client\Common\HttpMethodsClient;
 use Http\HttplugBundle\HttplugBundle;
-use HWI\Bundle\OAuthBundle\DependencyInjection\HWIOAuthExtension;
-use HWI\Bundle\OAuthBundle\OAuth\ResourceOwnerInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\DependencyInjection\HWIOAuthExtension;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpFoundation\Request;
@@ -289,7 +289,7 @@ class HWIOAuthExtensionTest extends TestCase
         $config['resource_owners'] = array(
             'valid' => array(
                 'type' => 'oauth1',
-                'class' => 'HWI\Bundle\OAuthBundle\Tests\DependencyInjection\MyCustomProvider',
+                'class' => 'FOS\Bundle\OAuthBSocialConnectBundle\Tests\DependencyInjection\MyCustomProvider',
                 'client_id' => 'client_id',
                 'client_secret' => 'client_secret',
                 'authorization_url' => 'http://test.pl/authorization_url',
@@ -314,7 +314,7 @@ class HWIOAuthExtensionTest extends TestCase
         $config['resource_owners'] = array(
             'valid' => array(
                 'type' => 'oauth2',
-                'class' => 'HWI\Bundle\OAuthBundle\Tests\DependencyInjection\MyCustomProvider',
+                'class' => 'FOS\Bundle\OAuthBSocialConnectBundle\Tests\DependencyInjection\MyCustomProvider',
                 'client_id' => 'client_id',
                 'client_secret' => 'client_secret',
             ),
@@ -330,7 +330,7 @@ class HWIOAuthExtensionTest extends TestCase
         $config['resource_owners'] = array(
             'valid' => array(
                 'type' => 'oauth2',
-                'class' => 'HWI\Bundle\OAuthBundle\Tests\DependencyInjection\MyCustomProvider',
+                'class' => 'FOS\Bundle\OAuthBSocialConnectBundle\Tests\DependencyInjection\MyCustomProvider',
                 'client_id' => 'client_id',
                 'client_secret' => 'client_secret',
                 'authorization_url' => 'http://test.pl/authorization_url',
@@ -531,14 +531,14 @@ class HWIOAuthExtensionTest extends TestCase
 
     /**
      * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
-     * @expectedExceptionMessage Class "HWI\Bundle\OAuthBundle\Tests\DependencyInjection\MyWrongCustomProvider" must implement interface "HWI\Bundle\OAuthBundle\OAuth\ResourceOwnerInterface".
+     * @expectedExceptionMessage Class "FOS\Bundle\OAuthBSocialConnectBundle\Tests\DependencyInjection\MyWrongCustomProvider" must implement interface "FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface".
      */
     public function testCreateResourceOwnerServiceWithWrongClass()
     {
         $extension = new HWIOAuthExtension();
         $extension->createResourceOwnerService($this->containerBuilder, 'external_ressource_owner', array(
             'type' => 'oauth2',
-            'class' => 'HWI\Bundle\OAuthBundle\Tests\DependencyInjection\MyWrongCustomProvider',
+            'class' => 'FOS\Bundle\OAuthBSocialConnectBundle\Tests\DependencyInjection\MyWrongCustomProvider',
             'client_id' => '42',
             'client_secret' => 'foo',
         ));
@@ -549,7 +549,7 @@ class HWIOAuthExtensionTest extends TestCase
         $extension = new HWIOAuthExtension();
         $extension->createResourceOwnerService($this->containerBuilder, 'external_ressource_owner', array(
             'type' => 'oauth2',
-            'class' => 'HWI\Bundle\OAuthBundle\Tests\DependencyInjection\MyCustomProvider',
+            'class' => 'FOS\Bundle\OAuthBSocialConnectBundle\Tests\DependencyInjection\MyCustomProvider',
             'client_id' => '42',
             'client_secret' => 'foo',
         ));
@@ -558,7 +558,7 @@ class HWIOAuthExtensionTest extends TestCase
 
         $this->assertArrayHasKey('hwi_oauth.resource_owner.external_ressource_owner', $definitions);
         $this->assertEquals('hwi_oauth.abstract_resource_owner.oauth2', $definitions['hwi_oauth.resource_owner.external_ressource_owner']->getParent());
-        $this->assertEquals('HWI\Bundle\OAuthBundle\Tests\DependencyInjection\MyCustomProvider', $definitions['hwi_oauth.resource_owner.external_ressource_owner']->getClass());
+        $this->assertEquals('FOS\Bundle\OAuthBSocialConnectBundle\Tests\DependencyInjection\MyCustomProvider', $definitions['hwi_oauth.resource_owner.external_ressource_owner']->getClass());
 
         $argument2 = $definitions['hwi_oauth.resource_owner.external_ressource_owner']->getArgument(2);
         $this->assertEquals('42', $argument2['client_id']);
@@ -638,7 +638,7 @@ resource_owners:
         authorization_url:   https://path.to/oauth/v2/authorize
         infos_url:           https://path.to/api/user
         scope:               ""
-        user_response_class: HWI\Bundle\OAuthBundle\OAuth\Response\AdvancedPathUserResponse
+        user_response_class: FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\AdvancedPathUserResponse
         paths:
             identifier: id
             nickname:   username
@@ -654,7 +654,7 @@ resource_owners:
         authorization_url:   https://path.to/oauth/v1/authorize
         infos_url:           https://path.to/api/user
         realm:               ""
-        user_response_class: HWI\Bundle\OAuthBundle\OAuth\Response\PathUserResponse
+        user_response_class: FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\PathUserResponse
         paths:
             identifier: id
             nickname:   username

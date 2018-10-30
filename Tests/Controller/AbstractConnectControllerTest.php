@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\Controller;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\Controller;
 
-use HWI\Bundle\OAuthBundle\Connect\AccountConnectorInterface;
-use HWI\Bundle\OAuthBundle\Controller\ConnectController;
-use HWI\Bundle\OAuthBundle\OAuth\ResourceOwnerInterface;
-use HWI\Bundle\OAuthBundle\Security\Core\Exception\AccountNotLinkedException;
-use HWI\Bundle\OAuthBundle\Security\Http\ResourceOwnerMap;
-use HWI\Bundle\OAuthBundle\Security\OAuthUtils;
-use HWI\Bundle\OAuthBundle\Tests\Fixtures\CustomOAuthToken;
-use HWI\Bundle\OAuthBundle\Tests\Fixtures\CustomUserResponse;
+use FOS\Bundle\OAuthBSocialConnectBundle\Connect\AccountConnectorInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\Controller\ConnectController;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\Exception\AccountNotLinkedException;
+use FOS\Bundle\OAuthBSocialConnectBundle\Security\Http\ResourceOwnerMap;
+use FOS\Bundle\OAuthBSocialConnectBundle\Security\OAuthUtils;
+use FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures\CustomOAuthToken;
+use FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures\CustomUserResponse;
 use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\DependencyInjection\ContainerInterface;

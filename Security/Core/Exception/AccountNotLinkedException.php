@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Security\Core\Exception;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\Exception;
 
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 

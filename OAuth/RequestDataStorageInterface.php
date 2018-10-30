@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\OAuth;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\OAuth;
 
 /**
  * Interface for classes providing a request tokens storage.

@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\OAuth\ResourceOwner;
 
-use HWI\Bundle\OAuthBundle\OAuth\ResourceOwner\SpotifyResourceOwner;
-use HWI\Bundle\OAuthBundle\Tests\Fixtures\CustomUserResponse;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner\SpotifyResourceOwner;
+use FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures\CustomUserResponse;
 
 /**
  * @author Janne Savolainen <janne.savolainen@sempre.fi>
@@ -59,7 +59,7 @@ json;
         $this->mockHttpClient($this->userResponse);
 
         /**
-         * @var \HWI\Bundle\OAuthBundle\OAuth\Response\AbstractUserResponse
+         * @var \FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\AbstractUserResponse
          */
         $userResponse = $this->resourceOwner->getUserInformation(array('access_token' => 'token'));
 

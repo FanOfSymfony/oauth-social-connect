@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\Controller;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\Controller;
 
-use HWI\Bundle\OAuthBundle\Tests\Fixtures\CustomOAuthToken;
+use FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures\CustomOAuthToken;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 

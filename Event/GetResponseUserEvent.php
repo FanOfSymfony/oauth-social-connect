@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Event;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Event;
 
 use Symfony\Component\HttpFoundation\Response;
 

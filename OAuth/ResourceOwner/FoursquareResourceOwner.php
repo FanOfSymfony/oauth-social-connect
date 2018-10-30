@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner;
 
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;

@@ -1,17 +1,8 @@
 <?php
 
-/*
- * This file is part of the HWIOAuthBundle package.
- *
- * (c) Hardware.Info <opensource@hardware.info>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Connect;
 
-namespace HWI\Bundle\OAuthBundle\Connect;
-
-use HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\UserResponseInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -30,3 +21,7 @@ interface AccountConnectorInterface
      */
     public function connect(UserInterface $user, UserResponseInterface $response);
 }
+
+
+
+FOS\Bundle\OAuthSocialConnect

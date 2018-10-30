@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\OAuth\ResourceOwner;
 
 use Http\Client\Exception\TransferException;
-use HWI\Bundle\OAuthBundle\OAuth\Exception\HttpTransportException;
-use HWI\Bundle\OAuthBundle\OAuth\ResourceOwner\GenericOAuth2ResourceOwner;
-use HWI\Bundle\OAuthBundle\Tests\Fixtures\CustomUserResponse;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Exception\HttpTransportException;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner\GenericOAuth2ResourceOwner;
+use FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures\CustomUserResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\OptionsResolver\Exception\InvalidOptionsException;
 
@@ -99,7 +99,7 @@ json;
     {
         $this->mockHttpClient($this->userResponse, 'application/json; charset=utf-8');
 
-        /** @var $userResponse \HWI\Bundle\OAuthBundle\OAuth\Response\AbstractUserResponse */
+        /** @var $userResponse \FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\AbstractUserResponse */
         $userResponse = $this->resourceOwner->getUserInformation($this->tokenData);
 
         $this->assertEquals('1', $userResponse->getUsername());

@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\OAuth\ResourceOwner;
 
-use HWI\Bundle\OAuthBundle\OAuth\ResourceOwner\EventbriteResourceOwner;
-use HWI\Bundle\OAuthBundle\OAuth\Response\AbstractUserResponse;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner\EventbriteResourceOwner;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\AbstractUserResponse;
 
 class EventbriteResourceOwnerTest extends GenericOAuth2ResourceOwnerTest
 {

@@ -34,7 +34,7 @@ hwi_oauth:
 Yep, that's all! Now you can receive require details in i.e. `loadUserByOAuthUserResponse(UserResponseInterface $response)`:
 
 ```php
-/* @var $response \HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface */
+/* @var $response \FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\UserResponseInterface */
 var_dump(
     $response->getEmail(),
     $response->getProfilePicture()
@@ -65,7 +65,7 @@ Again the details can be accessed in i.e. `loadUserByOAuthUserResponse(UserRespo
 
 ```php
 // This method will return all data that was sent from resource owner
-/* @var $response \HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface */
+/* @var $response \FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\UserResponseInterface */
 $data = $response->getData();
 
 var_dump(
@@ -92,7 +92,7 @@ hwi_oauth:
 Now just check the results:
 
 ```php
-/* @var $response \HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface */
+/* @var $response \FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\UserResponseInterface */
 var_dump(
     $response->getRealName()
 );

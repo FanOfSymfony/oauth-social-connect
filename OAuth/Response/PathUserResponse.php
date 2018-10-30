@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\OAuth\Response;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response;
 
 /**
  * Class parsing the properties by given path options.

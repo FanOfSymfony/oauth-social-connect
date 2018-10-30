@@ -41,7 +41,7 @@ hwi_oauth:
             authorization_url:   https://path.to/oauth/v2/authorize
             infos_url:           https://path.to/api/user
             scope:               "user_details"
-            user_response_class: HWI\Bundle\OAuthBundle\OAuth\Response\PathUserResponse
+            user_response_class: FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\PathUserResponse
             paths:
                 identifier: id
                 nickname:   username
@@ -56,7 +56,7 @@ hwi_oauth:
             authorization_url:   https://path.to/oauth/v1/authorize
             infos_url:           https://path.to/api/user
             realm:               "whatever"
-            user_response_class: HWI\Bundle\OAuthBundle\OAuth\Response\PathUserResponse
+            user_response_class: FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\PathUserResponse
             paths:
                 identifier: id
                 nickname:   username

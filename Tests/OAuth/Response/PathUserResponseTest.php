@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\OAuth\Response;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\OAuth\Response;
 
-use HWI\Bundle\OAuthBundle\OAuth\ResourceOwnerInterface;
-use HWI\Bundle\OAuthBundle\OAuth\Response\PathUserResponse;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\PathUserResponse;
 use PHPUnit\Framework\TestCase;
 
 class PathUserResponseTest extends TestCase

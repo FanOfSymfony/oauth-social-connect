@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\OAuth\RequestDataStorage;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\OAuth\RequestDataStorage;
 
-use HWI\Bundle\OAuthBundle\OAuth\RequestDataStorageInterface;
-use HWI\Bundle\OAuthBundle\OAuth\ResourceOwnerInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\RequestDataStorageInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 /**

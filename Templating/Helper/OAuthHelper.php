@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Templating\Helper;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Templating\Helper;
 
-use HWI\Bundle\OAuthBundle\Security\OAuthUtils;
+use FOS\Bundle\OAuthBSocialConnectBundle\Security\OAuthUtils;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Templating\Helper\Helper;
 

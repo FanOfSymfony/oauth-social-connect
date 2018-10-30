@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\OAuth\ResourceOwner;
 
-use HWI\Bundle\OAuthBundle\OAuth\ResourceOwner\QQResourceOwner;
-use HWI\Bundle\OAuthBundle\Tests\Fixtures\CustomUserResponse;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner\QQResourceOwner;
+use FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures\CustomUserResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Http\HttpUtils;
 
@@ -42,7 +42,7 @@ json;
         $this->mockHttpClient($this->userResponse);
 
         /**
-         * @var \HWI\Bundle\OAuthBundle\OAuth\Response\AbstractUserResponse
+         * @var \FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\AbstractUserResponse
          */
         $userResponse = $this->resourceOwner->getUserInformation(array('access_token' => 'token'), array('openid' => '1'));
 

@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\OAuth;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\OAuth;
 
-use HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\UserResponseInterface;
 use Symfony\Component\HttpFoundation\Request as HttpRequest;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 
@@ -29,7 +29,7 @@ interface ResourceOwnerInterface
      * @param array $accessToken     The access token
      * @param array $extraParameters An array of parameters to add to the url
      *
-     * @throws \HWI\Bundle\OAuthBundle\OAuth\Exception\HttpTransportException
+     * @throws \FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Exception\HttpTransportException
      *
      * @return UserResponseInterface the wrapped response interface
      */
@@ -52,7 +52,7 @@ interface ResourceOwnerInterface
      * @param string      $redirectUri     The uri to redirect the client back to
      * @param array       $extraParameters An array of parameters to add to the url
      *
-     * @throws \HWI\Bundle\OAuthBundle\OAuth\Exception\HttpTransportException
+     * @throws \FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Exception\HttpTransportException
      *
      * @return array The access token
      */

@@ -1,29 +1,17 @@
 <?php
 
-/*
- * This file is part of the HWIOAuthBundle package.
- *
- * (c) Hardware.Info <opensource@hardware.info>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-namespace HWI\Bundle\OAuthBundle\Form;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Form;
 
 use FOS\UserBundle\Form\Handler\RegistrationFormHandler;
 use FOS\UserBundle\Mailer\MailerInterface;
 use FOS\UserBundle\Model\UserManagerInterface;
 use FOS\UserBundle\Util\TokenGenerator;
-use HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\UserResponseInterface;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-/**
- * @author Alexander <iam.asm89@gmail.com>
- */
 class FOSUBRegistrationFormHandler implements RegistrationFormHandlerInterface
 {
     /**

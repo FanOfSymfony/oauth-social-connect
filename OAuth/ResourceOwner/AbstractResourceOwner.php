@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner;
 
 use Http\Client\Common\HttpMethodsClient;
 use Http\Client\Exception;
-use HWI\Bundle\OAuthBundle\OAuth\Exception\HttpTransportException;
-use HWI\Bundle\OAuthBundle\OAuth\RequestDataStorageInterface;
-use HWI\Bundle\OAuthBundle\OAuth\ResourceOwnerInterface;
-use HWI\Bundle\OAuthBundle\OAuth\Response\PathUserResponse;
-use HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Exception\HttpTransportException;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\RequestDataStorageInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwnerInterface;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\PathUserResponse;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\UserResponseInterface;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\HttpFoundation\Request as HttpRequest;
 use Symfony\Component\OptionsResolver\OptionsResolver;

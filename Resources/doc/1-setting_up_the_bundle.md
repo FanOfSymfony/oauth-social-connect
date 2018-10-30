@@ -24,7 +24,7 @@ public function registerBundles()
     $bundles = array(
         // ...
         new Http\HttplugBundle\HttplugBundle(), // If you require the php-http/httplug-bundle package.
-        new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
+        new FOS\Bundle\OAuthBSocialConnectBundle\HWIOAuthBundle(),
     );
 }
 ```

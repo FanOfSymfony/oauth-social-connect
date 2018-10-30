@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\OAuth\ResourceOwner;
 
-use HWI\Bundle\OAuthBundle\OAuth\ResourceOwner\SensioConnectResourceOwner;
-use HWI\Bundle\OAuthBundle\OAuth\Response\SensioConnectUserResponse;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner\SensioConnectResourceOwner;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\SensioConnectUserResponse;
 
 class SensioConnectResourceOwnerTest extends GenericOAuth2ResourceOwnerTest
 {

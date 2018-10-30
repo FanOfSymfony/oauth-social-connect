@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\OAuth\ResourceOwner;
 
-use HWI\Bundle\OAuthBundle\OAuth\ResourceOwner\DeviantartResourceOwner;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner\DeviantartResourceOwner;
 
 class DeviantartResourceOwnerTest extends GenericOAuth2ResourceOwnerTest
 {
@@ -34,7 +34,7 @@ json;
         $this->mockHttpClient($this->userResponse, 'application/json; charset=utf-8');
 
         /**
-         * @var \HWI\Bundle\OAuthBundle\OAuth\Response\AbstractUserResponse
+         * @var \FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\AbstractUserResponse
          */
         $userResponse = $this->resourceOwner->getUserInformation(array('access_token' => 'token'));
 

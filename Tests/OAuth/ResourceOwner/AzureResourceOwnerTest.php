@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\OAuth\ResourceOwner;
 
 use Http\Client\Exception\TransferException;
-use HWI\Bundle\OAuthBundle\OAuth\Exception\HttpTransportException;
-use HWI\Bundle\OAuthBundle\OAuth\ResourceOwner\AzureResourceOwner;
-use HWI\Bundle\OAuthBundle\Tests\Fixtures\CustomUserResponse;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Exception\HttpTransportException;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner\AzureResourceOwner;
+use FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures\CustomUserResponse;
 use Symfony\Component\Security\Http\HttpUtils;
 
 class AzureResourceOwnerTest extends GenericOAuth2ResourceOwnerTest
@@ -56,7 +56,7 @@ json;
     {
         $token = '.'.base64_encode($this->userResponse);
         /**
-         * @var \HWI\Bundle\OAuthBundle\OAuth\Response\AbstractUserResponse
+         * @var \FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\AbstractUserResponse
          */
         $userResponse = $this->resourceOwner->getUserInformation(array(
             'access_token' => 'token',
@@ -78,7 +78,7 @@ json;
         $token = '.'.base64_encode($this->userResponse);
 
         /**
-         * @var \HWI\Bundle\OAuthBundle\OAuth\Response\AbstractUserResponse
+         * @var \FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\AbstractUserResponse
          */
         $userResponse = $resourceOwner->getUserInformation(array(
             'access_token' => 'token',

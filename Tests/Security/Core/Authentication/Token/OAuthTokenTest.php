@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\Security\Core\Authentication\Token;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\Security\Core\Authentication\Token;
 
-use HWI\Bundle\OAuthBundle\Security\Core\Authentication\Token\OAuthToken;
-use HWI\Bundle\OAuthBundle\Security\Core\Exception\AccountNotLinkedException;
+use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\Authentication\Token\OAuthToken;
+use FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\Exception\AccountNotLinkedException;
 use PHPUnit\Framework\TestCase;
 
 class OAuthTokenTest extends TestCase

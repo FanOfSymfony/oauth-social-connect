@@ -22,7 +22,7 @@ hwi_oauth:
 
 services:
     hwi_oauth.user.provider.entity:
-        class: HWI\Bundle\OAuthBundle\Security\Core\User\OAuthUserProvider
+        class: FOS\Bundle\OAuthBSocialConnectBundle\Security\Core\User\OAuthUserProvider
 ```
 
 ### Import Routing

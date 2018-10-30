@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\OAuth\ResourceOwner;
 
 use Http\Client\Exception\TransferException;
-use HWI\Bundle\OAuthBundle\OAuth\Exception\HttpTransportException;
-use HWI\Bundle\OAuthBundle\OAuth\ResourceOwner\SinaWeiboResourceOwner;
-use HWI\Bundle\OAuthBundle\Tests\Fixtures\CustomUserResponse;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Exception\HttpTransportException;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner\SinaWeiboResourceOwner;
+use FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures\CustomUserResponse;
 
 class SinaWeiboResourceOwnerTest extends GenericOAuth2ResourceOwnerTest
 {
@@ -38,7 +38,7 @@ json;
         $this->mockHttpClient($this->userResponse);
 
         /**
-         * @var \HWI\Bundle\OAuthBundle\OAuth\Response\AbstractUserResponse
+         * @var \FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\AbstractUserResponse
          */
         $userResponse = $this->resourceOwner->getUserInformation(array('access_token' => 'token', 'uid' => '1'));
 
@@ -73,7 +73,7 @@ json;
         $this->mockHttpClient();
 
         /**
-         * @var \HWI\Bundle\OAuthBundle\Tests\Fixtures\CustomUserResponse
+         * @var \FOS\Bundle\OAuthBSocialConnectBundle\Tests\Fixtures\CustomUserResponse
          */
         $userResponse = $resourceOwner->getUserInformation(array('access_token' => 'token', 'uid' => '1'));
 

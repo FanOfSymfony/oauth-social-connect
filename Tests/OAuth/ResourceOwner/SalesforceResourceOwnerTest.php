@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace HWI\Bundle\OAuthBundle\Tests\OAuth\ResourceOwner;
+namespace FOS\Bundle\OAuthBSocialConnectBundle\Tests\OAuth\ResourceOwner;
 
 use Http\Client\Exception\TransferException;
-use HWI\Bundle\OAuthBundle\OAuth\Exception\HttpTransportException;
-use HWI\Bundle\OAuthBundle\OAuth\ResourceOwner\SalesforceResourceOwner;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Exception\HttpTransportException;
+use FOS\Bundle\OAuthBSocialConnectBundle\OAuth\ResourceOwner\SalesforceResourceOwner;
 
 class SalesforceResourceOwnerTest extends GenericOAuth2ResourceOwnerTest
 {
@@ -41,7 +41,7 @@ json;
         $this->mockHttpClient($this->userResponse, 'application/json; charset=utf-8');
 
         /**
-         * @var \HWI\Bundle\OAuthBundle\OAuth\Response\AbstractUserResponse
+         * @var \FOS\Bundle\OAuthBSocialConnectBundle\OAuth\Response\AbstractUserResponse
          */
         $userResponse = $this->resourceOwner->getUserInformation(array('access_token' => 'token', 'id' => 'someuser'));
 
