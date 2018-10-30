@@ -1,211 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d86ba3b-40e8-43e5-a33f-8b9a9a372a30" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect/AccountConnectorInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/Connect/AccountConnectorInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/ConnectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/ConnectController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DependencyInjection/CompilerPass/SetResourceOwnerServiceNameCompilerPass.php" beforeDir="false" afterPath="$PROJECT_DIR$/DependencyInjection/CompilerPass/SetResourceOwnerServiceNameCompilerPass.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DependencyInjection/Configuration.php" beforeDir="false" afterPath="$PROJECT_DIR$/DependencyInjection/Configuration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DependencyInjection/HWIOAuthExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/DependencyInjection/HWIOAuthExtension.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DependencyInjection/Security/Factory/OAuthFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/DependencyInjection/Security/Factory/OAuthFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/FilterUserResponseEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/Event/FilterUserResponseEvent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/FormEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/Event/FormEvent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/GetResponseUserEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/Event/GetResponseUserEvent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Event/UserEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/Event/UserEvent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Form/FOSUBRegistrationFormHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/Form/FOSUBRegistrationFormHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Form/RegistrationFormHandlerInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/Form/RegistrationFormHandlerInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HWIOAuthBundle.php" beforeDir="false" afterPath="$PROJECT_DIR$/FOSOAuthSocialConnectorBundle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HWIOAuthEvents.php" beforeDir="false" afterPath="$PROJECT_DIR$/FOSOAuthSocialConnectorEvents.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/Exception/HttpTransportException.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/Exception/HttpTransportException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/RequestDataStorage/SessionStorage.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/RequestDataStorage/SessionStorage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/RequestDataStorageInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/RequestDataStorageInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/AbstractResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/AbstractResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/AmazonResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/AmazonResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/AsanaResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/AsanaResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/Auth0ResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/Auth0ResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/AzureResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/AzureResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/Bitbucket2ResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/Bitbucket2ResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/BitbucketResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/BitbucketResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/BitlyResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/BitlyResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/BoxResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/BoxResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/BufferAppResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/BufferAppResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/CleverResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/CleverResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/DailymotionResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/DailymotionResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/DeezerResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/DeezerResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/DeviantartResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/DeviantartResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/DiscogsResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/DiscogsResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/DisqusResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/DisqusResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/DropboxResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/DropboxResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/EveOnlineResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/EveOnlineResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/EventbriteResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/EventbriteResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/FacebookResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/FacebookResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/FiwareResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/FiwareResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/FlickrResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/FlickrResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/FoursquareResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/FoursquareResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/GenericOAuth1ResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/GenericOAuth1ResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/GenericOAuth2ResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/GenericOAuth2ResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/GitHubResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/GitHubResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/GitLabResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/GitLabResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/GoogleResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/GoogleResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/HubicResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/HubicResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/InstagramResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/InstagramResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/ItembaseResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/ItembaseResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/JawboneResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/JawboneResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/JiraResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/JiraResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/LinkedinResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/LinkedinResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/MailRuResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/MailRuResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/OdnoklassnikiResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/OdnoklassnikiResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/Office365ResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/Office365ResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/PaypalResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/PaypalResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/QQResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/QQResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/RedditResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/RedditResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/RunKeeperResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/RunKeeperResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/SalesforceResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/SalesforceResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/SensioConnectResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/SensioConnectResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/SinaWeiboResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/SinaWeiboResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/SlackResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/SlackResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/SoundcloudResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/SoundcloudResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/SpotifyResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/SpotifyResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/StackExchangeResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/StackExchangeResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/StereomoodResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/StereomoodResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/StravaResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/StravaResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/ThirtySevenSignalsResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/ThirtySevenSignalsResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/ToshlResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/ToshlResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/TraktResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/TraktResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/TrelloResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/TrelloResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/TwitchResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/TwitchResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/TwitterResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/TwitterResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/VkontakteResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/VkontakteResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/WindowsLiveResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/WindowsLiveResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/WordpressResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/WordpressResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/WunderlistResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/WunderlistResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/XingResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/XingResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/YahooResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/YahooResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/YandexResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/YandexResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwner/YoutubeResourceOwner.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwner/YoutubeResourceOwner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResourceOwnerInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResourceOwnerInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/Response/AbstractUserResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/Response/AbstractUserResponse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/Response/PathUserResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/Response/PathUserResponse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/Response/SensioConnectUserResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/Response/SensioConnectUserResponse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/Response/UserResponseInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/Response/UserResponseInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OAuth/ResponseInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/OAuth/ResponseInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/config/http_client.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/config/http_client.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/config/oauth.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/config/oauth.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/config/routing/connect_41.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/config/routing/connect_41.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/config/routing/login_41.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/config/routing/login_41.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/config/routing/redirect_41.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/config/routing/redirect_41.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/config/templating.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/config/templating.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/config/twig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/config/twig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/doc/1-setting_up_the_bundle.md" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/doc/1-setting_up_the_bundle.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/doc/3-configuring_the_security_layer.md" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/doc/3-configuring_the_security_layer.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/doc/4-integrating_fosub.md" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/doc/4-integrating_fosub.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/doc/bonus/facebook-connect.md" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/doc/bonus/facebook-connect.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/doc/internals/external_resource_owner.md" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/doc/internals/external_resource_owner.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/doc/internals/reference_configuration.md" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/doc/internals/reference_configuration.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/doc/internals/response_object_and_paths.md" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/doc/internals/response_object_and_paths.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/doc/resource_owners/others.md" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/doc/resource_owners/others.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/Core/Authentication/Provider/OAuthProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Core/Authentication/Provider/OAuthProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/Core/Authentication/Token/OAuthToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Core/Authentication/Token/OAuthToken.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/Core/Exception/AccountNotLinkedException.php" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Core/Exception/AccountNotLinkedException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/Core/Exception/OAuthAwareExceptionInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Core/Exception/OAuthAwareExceptionInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/Core/User/EntityUserProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Core/User/EntityUserProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/Core/User/FOSUBUserProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Core/User/FOSUBUserProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/Core/User/OAuthAwareUserProviderInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Core/User/OAuthAwareUserProviderInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/Core/User/OAuthUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Core/User/OAuthUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/Core/User/OAuthUserProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Core/User/OAuthUserProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/Http/EntryPoint/OAuthEntryPoint.php" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Http/EntryPoint/OAuthEntryPoint.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/Http/Firewall/OAuthListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Http/Firewall/OAuthListener.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/Http/ResourceOwnerMap.php" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Http/ResourceOwnerMap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/Http/ResourceOwnerMapInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/Security/Http/ResourceOwnerMapInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/OAuthErrorHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/Security/OAuthErrorHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security/OAuthUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/Security/OAuthUtils.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templating/Helper/OAuthHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/Templating/Helper/OAuthHelper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Controller/AbstractConnectControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Controller/AbstractConnectControllerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Controller/ConnectControllerConnectActionTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Controller/ConnectControllerConnectActionTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Controller/ConnectControllerConnectServiceActionTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Controller/ConnectControllerConnectServiceActionTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Controller/ConnectControllerRedirectToServiceActionTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Controller/ConnectControllerRedirectToServiceActionTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Controller/ConnectControllerRegistrationActionTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Controller/ConnectControllerRegistrationActionTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/DependencyInjection/HWIOAuthExtensionTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/DependencyInjection/HWIOAuthExtensionTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Fixtures/CustomOAuthToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Fixtures/CustomOAuthToken.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Fixtures/CustomUserResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Fixtures/CustomUserResponse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Fixtures/FOSUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Fixtures/FOSUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Fixtures/OAuthAwareException.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Fixtures/OAuthAwareException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Fixtures/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Fixtures/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Form/FOSUBRegistrationFormHandlerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Form/FOSUBRegistrationFormHandlerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/AmazonResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/AmazonResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/AsanaResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/AsanaResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/Auth0ResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/Auth0ResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/AzureResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/AzureResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/BitbucketResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/BitbucketResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/BitlyResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/BitlyResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/BoxResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/BoxResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/BufferAppResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/BufferAppResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/CleverResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/CleverResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/DailymotionResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/DailymotionResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/DeezerResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/DeezerResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/DeviantartResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/DeviantartResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/DiscogsResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/DiscogsResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/DisqusResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/DisqusResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/DropboxResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/DropboxResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/EveOnlineResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/EveOnlineResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/EventbriteResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/EventbriteResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/FacebookResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/FacebookResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/FlickrResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/FlickrResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/FoursquareResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/FoursquareResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/GenericOAuth1ResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/GenericOAuth1ResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/GenericOAuth2ResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/GenericOAuth2ResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/GitHubResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/GitHubResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/GitLabResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/GitLabResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/GoogleResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/GoogleResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/HubicResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/HubicResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/InstagramResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/InstagramResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/ItembaseResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/ItembaseResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/JiraResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/JiraResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/LinkedinResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/LinkedinResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/MailRuResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/MailRuResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/OdnoklassnikiResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/OdnoklassnikiResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/Office365ResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/Office365ResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/PaypalResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/PaypalResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/QQResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/QQResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/RedditResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/RedditResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/ResourceOwnerTestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/ResourceOwnerTestCase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/RunKeeperResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/RunKeeperResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/SalesforceResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/SalesforceResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/SensioConnectResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/SensioConnectResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/SinaWeiboResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/SinaWeiboResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/SlackResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/SlackResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/SoundcloudResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/SoundcloudResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/SpotifyResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/SpotifyResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/StackExchangeResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/StackExchangeResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/StereomoodResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/StereomoodResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/StravaResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/StravaResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/ThirtySevenSignalsResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/ThirtySevenSignalsResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/ToshlResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/ToshlResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/TraktResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/TraktResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/TrelloResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/TrelloResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/TwitchResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/TwitchResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/TwitterResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/TwitterResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/VkontakteResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/VkontakteResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/WindowsLiveResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/WindowsLiveResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/WordpressResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/WordpressResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/WunderlistResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/WunderlistResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/XingResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/XingResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/YahooResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/YahooResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/YandexResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/YandexResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/YoutubeResourceOwnerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/ResourceOwner/YoutubeResourceOwnerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OAuth/Response/PathUserResponseTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OAuth/Response/PathUserResponseTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Security/Core/Authentication/Provider/OAuthProviderTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Security/Core/Authentication/Provider/OAuthProviderTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Security/Core/Authentication/Token/OAuthTokenTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Security/Core/Authentication/Token/OAuthTokenTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Security/Core/User/EntityUserProviderTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Security/Core/User/EntityUserProviderTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Security/Core/User/FOSUBUserProviderTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Security/Core/User/FOSUBUserProviderTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Security/Core/User/OAuthUserProviderTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Security/Core/User/OAuthUserProviderTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Security/Core/User/OAuthUserTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Security/Core/User/OAuthUserTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Security/OAuthUtilsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Security/OAuthUtilsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Twig/Extension/OAuthExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/Twig/Extension/OAuthExtension.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-    </list>
+    <list default="true" id="1d86ba3b-40e8-43e5-a33f-8b9a9a372a30" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +15,7 @@
     <session id="-1337336385">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.opened" value="4" />
@@ -254,7 +50,7 @@
           <entry key="iml" value="3" />
           <entry key="json" value="33" />
           <entry key="md" value="41" />
-          <entry key="php" value="86" />
+          <entry key="php" value="112" />
           <entry key="xml" value="33" />
         </counts>
       </usages-collector>
@@ -263,42 +59,14 @@
           <entry key="IDEA_MODULE" value="3" />
           <entry key="JSON" value="33" />
           <entry key="Markdown" value="41" />
-          <entry key="PHP" value="86" />
+          <entry key="PHP" value="112" />
           <entry key="XML" value="33" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/HWIOAuthBundle.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="1" column="24" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Connect/AccountConnectorInterface.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="26" selection-start-line="26" selection-end-line="26" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DependencyInjection/Configuration.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -314,6 +82,7 @@
       <find>HWI\Bundle</find>
       <find>HWI\Bundle\OAuthBundle</find>
       <find>OAuthBSocialConnectBundle</find>
+      <find>OAuthSocialConnctBundle</find>
     </findStrings>
     <replaceStrings>
       <replace>FOS</replace>
@@ -324,12 +93,14 @@
       <replace>OAuthBSocialConnectBundle</replace>
       <replace>AuthBocialConnectBundle</replace>
       <replace>OAuthBocialConnectBundle</replace>
+      <replace>OAuthSocialConnctBundle</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/Resources</dir>
       <dir>$PROJECT_DIR$/OAuth/Exception</dir>
       <dir>$PROJECT_DIR$/.idea/inspectionProfiles</dir>
       <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/Controller</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -352,6 +123,7 @@
         <option value="$PROJECT_DIR$/Connect/AccountConnectorInterface.php" />
         <option value="$PROJECT_DIR$/Controller/ConnectController.php" />
         <option value="$PROJECT_DIR$/.idea/HWIOAuthBundle.iml" />
+        <option value="$PROJECT_DIR$/DependencyInjection/Configuration.php" />
       </list>
     </option>
   </component>
@@ -521,16 +293,15 @@
       <workItem from="1540861941725" duration="3311000" />
       <workItem from="1540865270531" duration="7000" />
       <workItem from="1540865286839" duration="148000" />
-      <workItem from="1540865458444" duration="1755000" />
+      <workItem from="1540865458444" duration="4554000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5221000" />
+    <option name="totallyTimeSpent" value="8020000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="978" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25885227" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -745,10 +516,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DependencyInjection/Configuration.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        <state relative-caret-position="312">
+          <caret line="22" column="54" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="54" />
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
